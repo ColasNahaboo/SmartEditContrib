@@ -1983,8 +1983,8 @@ function smartEditorInsertWikiLink(){
 
 function wikismartInsertSmartColor(smartColor){
 	
-	var sstagBeg = "<span class=\""+smartColor+"\">";
-	var sstagEnd = "</span>";
+	var sstagBeg = "%"+smartColor.toUpperCase()+"%";
+	var sstagEnd = "%ENDCOLOR%";
 	var tstoadd = sstagBeg+wikismartSelection+sstagEnd;
 	
 	
