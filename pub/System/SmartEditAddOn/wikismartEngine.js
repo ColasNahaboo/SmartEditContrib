@@ -13,28 +13,28 @@ Smart Editor use the Mochikit library for the key events
 ****************/
 
 // Textarea element / available for all scripts
-var twikismartTextarea = "";
-var twikismartTextareaId = "";
-var twikismartTextareaHasFocus = false;
+var wikismartTextarea = "";
+var wikismartTextareaId = "";
+var wikismartTextareaHasFocus = false;
 
 // For search engine
-var twikismartTopSearchHasFocus = false;
-var twikismartBottomSearchHasFocus = false;
-var twikismartTextToSearch = "";
-var twikismartTextOccurence = -1;
+var wikismartTopSearchHasFocus = false;
+var wikismartBottomSearchHasFocus = false;
+var wikismartTextToSearch = "";
+var wikismartTextOccurence = -1;
 
-var twikismartValueToInsertFromPopup = "";
+var wikismartValueToInsertFromPopup = "";
 
-var twikismartShiftPressed = false;
+var wikismartShiftPressed = false;
 // MLR variable to hold Alt & Ctrl key status
-var twikismartAltorCtrlPressed = false;
+var wikismartAltorCtrlPressed = false;
 
 // The textarea content at t time
-var twikismartTextareaContent = "";
-var twikismartSelection = "";
-var twikismartStartIndex = "";
-var twikismartEndIndex = "";
-var twikismartTextareaScrollFirefox = 0;
+var wikismartTextareaContent = "";
+var wikismartSelection = "";
+var wikismartStartIndex = "";
+var wikismartEndIndex = "";
+var wikismartTextareaScrollFirefox = 0;
 
 // Opened rows
 var smartEditSearchOpen = false;
@@ -42,18 +42,18 @@ var smartEditInternalLinkOpen = false;
 var smartEditExternalLinkOpen = false;
 
 // All custom functions
-var twikismartCustomerStrings = new Array();
-var twikismartCustomerIcons = new Array();
-var twikismartCustomerFunctionNames = new Array();
-var twikismartCustomerIconsNames = new Array();
-var twikismartWebStrings = new Array();
-var twikismartWebIcons = new Array();
-var twikismartWebFunctionNames = new Array();
-var twikismartWebIconsNames = new Array();
-var twikismartSiteStrings = new Array();
-var twikismartSiteIcons = new Array();
-var twikismartSiteFunctionNames = new Array();
-var twikismartSiteIconsNames = new Array();
+var wikismartCustomerStrings = new Array();
+var wikismartCustomerIcons = new Array();
+var wikismartCustomerFunctionNames = new Array();
+var wikismartCustomerIconsNames = new Array();
+var wikismartWebStrings = new Array();
+var wikismartWebIcons = new Array();
+var wikismartWebFunctionNames = new Array();
+var wikismartWebIconsNames = new Array();
+var wikismartSiteStrings = new Array();
+var wikismartSiteIcons = new Array();
+var wikismartSiteFunctionNames = new Array();
+var wikismartSiteIconsNames = new Array();
 var smartEditorIECssClass = "";
 
 // When a popup div is opened ... do not initialize selection in IE !!!
@@ -67,26 +67,26 @@ var is_firefox = ((clientPC.indexOf('gecko')!=-1) && (clientPC.indexOf('spoofer'
                 && (clientPC.indexOf('khtml') == -1) && (clientPC.indexOf('netscape/7.0')==-1));
 
 
-function twikismartEdit(textareaid){
-	twikismartTextareaId = textareaid;
+function wikismartEdit(textareaid){
+	wikismartTextareaId = textareaid;
 	// If browser is Firefox or IE (Opera and Mac browsers are disabled)
 	if(is_firefox || ((navigator.userAgent.toLowerCase()).indexOf("opera") == -1)){
 	// Special CSS style for Internet Explorer
 	if(!is_firefox && ((navigator.userAgent.toLowerCase()).indexOf("opera") == -1)){
 		smartEditorIECssClass = "IE";
 	}
-	twikismartTextarea = document.getElementById(twikismartTextareaId);
-	twikismartTextAreaRows = twikismartTextarea.rows;
-	twikismartTextarea.onfocus = function(){twikismartTextAreaFocus();};
-	twikismartTextarea.onclick = function(){twikismartTextAreaClicked();};
-	twikismartTextarea.onblur = function(){twikismartTextAreaFocus();};
-	twikismartParseSiteFunctions();
-	twikismartParseWebFunctions();
-	twikismartParseCustomerFunctions();
-	twikismartParseSiteSmileys();
-	twikismartParseWebSmileys();
-	twikismartParseCustomerSmileys();
-	if(twikismartTextarea == null){
+	wikismartTextarea = document.getElementById(wikismartTextareaId);
+	wikismartTextAreaRows = wikismartTextarea.rows;
+	wikismartTextarea.onfocus = function(){wikismartTextAreaFocus();};
+	wikismartTextarea.onclick = function(){wikismartTextAreaClicked();};
+	wikismartTextarea.onblur = function(){wikismartTextAreaFocus();};
+	wikismartParseSiteFunctions();
+	wikismartParseWebFunctions();
+	wikismartParseCustomerFunctions();
+	wikismartParseSiteSmileys();
+	wikismartParseWebSmileys();
+	wikismartParseCustomerSmileys();
+	if(wikismartTextarea == null){
 		alert("No textarea detected with the given id : "+textareaid);
 	}
 	else{
@@ -96,18 +96,18 @@ function twikismartEdit(textareaid){
 		document.getElementById("smartEditorTopToolbarID").appendChild(newTool);
 		// Insert the botton toolbar
 		var newToolBottom = smartEditCreateToolbar();
-		twikismartInsertAfter(twikismartTextarea.parentNode, newToolBottom, twikismartTextarea);
+		wikismartInsertAfter(wikismartTextarea.parentNode, newToolBottom, wikismartTextarea);
 	}
 	}
 }
 
 /* For function search*/
 /* Calculate scroll value for firefox */
-function twikismartCalculateScroll(){
-	var scrollHeight = twikismartTextarea.scrollHeight;
-	var tscontent = twikismartTextarea.value;
-	tscontent = twikismartReplaceAll(tscontent);
-	var tslines = twikismartGetLines(tscontent);
+function wikismartCalculateScroll(){
+	var scrollHeight = wikismartTextarea.scrollHeight;
+	var tscontent = wikismartTextarea.value;
+	tscontent = wikismartReplaceAll(tscontent);
+	var tslines = wikismartGetLines(tscontent);
 	var lineHeight = 0;
 	if( tslines != null && tscontent.length != -1){
 		lineHeight = scrollHeight / (tslines.length);
@@ -116,102 +116,102 @@ function twikismartCalculateScroll(){
 }
 
 /* When the textarea get the focus*/
-function twikismartTextAreaFocus(){
-	twikismartTextareaHasFocus = !twikismartTextareaHasFocus;
+function wikismartTextAreaFocus(){
+	wikismartTextareaHasFocus = !wikismartTextareaHasFocus;
 }
 
 /* If the user click on the textarea, close all menus*/
-function twikismartTextAreaClicked(){
-	if(twikismartTextareaHasFocus && smartExtendedStylesOpen){
+function wikismartTextAreaClicked(){
+	if(wikismartTextareaHasFocus && smartExtendedStylesOpen){
 		smartEditToggleStyles();
 	}
-	if(twikismartTextareaHasFocus && SmartEditInsertCommonStringOpen){
+	if(wikismartTextareaHasFocus && SmartEditInsertCommonStringOpen){
 		smartEditToggleInsert();
 	}
-	if(twikismartTextareaHasFocus && SmartEditInsertColorOpen){
+	if(wikismartTextareaHasFocus && SmartEditInsertColorOpen){
 		smartEditToggleColors();
 	}
-	if(twikismartTextareaHasFocus && SmartEditInsertSmileyOpen){
+	if(wikismartTextareaHasFocus && SmartEditInsertSmileyOpen){
 		smartEditToggleSmileys();
 	}
-	if(smartEditInternalLinkOpen && twikismartTextareaHasFocus){
+	if(smartEditInternalLinkOpen && wikismartTextareaHasFocus){
 		smartEditFirstWikiLink = false;
 	}
-	if(smartEditExternalLinkOpen && twikismartTextareaHasFocus){
+	if(smartEditExternalLinkOpen && wikismartTextareaHasFocus){
 		smartEditFirstExternalLink = false;
-		twikismartInitializeAllAttributesForIE();
-		//document.getElementById("smarteditorExternalLinkTextInput").value = twikismartSelection;
+		wikismartInitializeAllAttributesForIE();
+		//document.getElementById("smarteditorExternalLinkTextInput").value = wikismartSelection;
 	}
 }
 
 /* For all functions */
 /* Initalize all selection attributes */
-function twikismartInitializeAllAttributes(){
-	twikismartTextareaContent = twikismartTextarea.value;
-	twikismartTextareaContent = twikismartReplaceAll(twikismartTextareaContent);
+function wikismartInitializeAllAttributes(){
+	wikismartTextareaContent = wikismartTextarea.value;
+	wikismartTextareaContent = wikismartReplaceAll(wikismartTextareaContent);
 	if(document.selection  && !is_firefox) {
-		twikismartSelection = document.selection.createRange().text;
-		var lbefore = twikismartSelection.length;
-		twikismartStartIndex = twikismartCursorPosition();
-		if(twikismartStartIndex == -1){
-			twikismartStartIndex = twikismartTextarea.value.length;
+		wikismartSelection = document.selection.createRange().text;
+		var lbefore = wikismartSelection.length;
+		wikismartStartIndex = wikismartCursorPosition();
+		if(wikismartStartIndex == -1){
+			wikismartStartIndex = wikismartTextarea.value.length;
 		}
-		twikismartSelection = twikismartReplaceAll(twikismartSelection);
-		var lend = lbefore - twikismartSelection.length;
-		twikismartEndIndex = twikismartStartIndex+twikismartSelection.length;
-		var nblines = twikismartNbLinesBefore(twikismartStartIndex);
-		twikismartStartIndex -= nblines;
-		twikismartEndIndex -= nblines;
+		wikismartSelection = wikismartReplaceAll(wikismartSelection);
+		var lend = lbefore - wikismartSelection.length;
+		wikismartEndIndex = wikismartStartIndex+wikismartSelection.length;
+		var nblines = wikismartNbLinesBefore(wikismartStartIndex);
+		wikismartStartIndex -= nblines;
+		wikismartEndIndex -= nblines;
 	}
 	else{
-		twikismartTextareaScrollFirefox = twikismartTextarea.scrollTop;
-		twikismartStartIndex = twikismartCursorPosition();
-		twikismartSelection = twikismartTextareaContent.substring(twikismartStartIndex,twikismartTextarea.selectionEnd);
-		twikismartEndIndex = twikismartStartIndex+twikismartSelection.length;
+		wikismartTextareaScrollFirefox = wikismartTextarea.scrollTop;
+		wikismartStartIndex = wikismartCursorPosition();
+		wikismartSelection = wikismartTextareaContent.substring(wikismartStartIndex,wikismartTextarea.selectionEnd);
+		wikismartEndIndex = wikismartStartIndex+wikismartSelection.length;
 	}
 	
-	if(twikismartIsEmptyString(twikismartSelection)){
-		twikismartSelection = "";
+	if(wikismartIsEmptyString(wikismartSelection)){
+		wikismartSelection = "";
 	}
 }
 
 /*For Styles, Colors, Icons and Insert menus*/
 /* Initialize selection before another click on menu */
 /* Cause : Bug on IE - If I d'on't initialize it before, a click on the new divisions clear old selection in the textarea*/
-function twikismartInitializeAllAttributesForIE(){
-	twikismartTextareaContent = twikismartTextarea.value;
-	twikismartTextareaContent = twikismartReplaceAll(twikismartTextareaContent);
+function wikismartInitializeAllAttributesForIE(){
+	wikismartTextareaContent = wikismartTextarea.value;
+	wikismartTextareaContent = wikismartReplaceAll(wikismartTextareaContent);
 	if(document.selection  && !is_firefox) {
-		twikismartSelection = document.selection.createRange().text;
-		var lbefore = twikismartSelection.length;
-		twikismartStartIndex = twikismartCursorPosition();
-		if(twikismartStartIndex == -1){
-			twikismartStartIndex = twikismartTextarea.value.length;
+		wikismartSelection = document.selection.createRange().text;
+		var lbefore = wikismartSelection.length;
+		wikismartStartIndex = wikismartCursorPosition();
+		if(wikismartStartIndex == -1){
+			wikismartStartIndex = wikismartTextarea.value.length;
 		}
-		twikismartSelection = twikismartReplaceAll(twikismartSelection);
-		var lend = lbefore - twikismartSelection.length;
-		twikismartEndIndex = twikismartStartIndex+twikismartSelection.length;
-		var nblines = twikismartNbLinesBefore(twikismartStartIndex);
-		twikismartStartIndex -= nblines;
-		twikismartEndIndex -= nblines;
+		wikismartSelection = wikismartReplaceAll(wikismartSelection);
+		var lend = lbefore - wikismartSelection.length;
+		wikismartEndIndex = wikismartStartIndex+wikismartSelection.length;
+		var nblines = wikismartNbLinesBefore(wikismartStartIndex);
+		wikismartStartIndex -= nblines;
+		wikismartEndIndex -= nblines;
 	}
 	else{
-		twikismartTextareaScrollFirefox = twikismartTextarea.scrollTop;
-		twikismartStartIndex = twikismartCursorPosition();
-		twikismartSelection = twikismartTextareaContent.substring(twikismartStartIndex,twikismartTextarea.selectionEnd);
-		twikismartEndIndex = twikismartStartIndex+twikismartSelection.length;
+		wikismartTextareaScrollFirefox = wikismartTextarea.scrollTop;
+		wikismartStartIndex = wikismartCursorPosition();
+		wikismartSelection = wikismartTextareaContent.substring(wikismartStartIndex,wikismartTextarea.selectionEnd);
+		wikismartEndIndex = wikismartStartIndex+wikismartSelection.length;
 	}
-	if(twikismartIsEmptyString(twikismartSelection)){
-		twikismartSelection = "";
+	if(wikismartIsEmptyString(wikismartSelection)){
+		wikismartSelection = "";
 	}
-	twikismartTextarea.value = twikismartTextareaContent;
-	twikismartSetSelectionRange(twikismartTextarea,twikismartStartIndex,twikismartEndIndex);
+	wikismartTextarea.value = wikismartTextareaContent;
+	wikismartSetSelectionRange(wikismartTextarea,wikismartStartIndex,wikismartEndIndex);
 
 }
 
 /* Set all line separators to \n */
 /* In IE and Opera, it is \r\n */
-function twikismartReplaceAll(text){
+function wikismartReplaceAll(text){
 	if(text != null && text.length > 0){
 		var indice = text.indexOf("\r\n");
 		while(indice != -1){
@@ -223,8 +223,8 @@ function twikismartReplaceAll(text){
 }
 
 /* return cursor position in the textarea*/
-function twikismartCursorPosition() {
-	var node = document.getElementById(twikismartTextareaId);
+function wikismartCursorPosition() {
+	var node = document.getElementById(wikismartTextareaId);
 	node.focus();
 	/* without node.focus() IE will returns -1 when focus is not on node */ 
 	if(node.selectionStart || navigator.userAgent.toLowerCase().indexOf("opera") != -1) 
@@ -244,18 +244,18 @@ function twikismartCursorPosition() {
 }
 
 /* Select text in the given input*/
-function twikismartSetSelectionRange(input, start, end) {
+function wikismartSetSelectionRange(input, start, end) {
 	// If it is Opera, change the value for selected elements !
 	if(navigator.userAgent.toLowerCase().indexOf("opera") != -1){
-		var sslinesBefore = twikismartNbLinesBefore(start);
-		var sslinesTotal = twikismartNbLinesBefore(end);
+		var sslinesBefore = wikismartNbLinesBefore(start);
+		var sslinesTotal = wikismartNbLinesBefore(end);
 		var sslinesInner = sslinesTotal - sslinesBefore;
 		start = start+sslinesBefore;
 		end = end+sslinesTotal;
 		
-		//twikismartDebug("Start and end : "+start+"_"+end);
+		//wikismartDebug("Start and end : "+start+"_"+end);
 	}
-//twikismartNbLinesBefore
+//wikismartNbLinesBefore
 
 	if (is_firefox) {
 		input.setSelectionRange(start, end);
@@ -272,9 +272,9 @@ function twikismartSetSelectionRange(input, start, end) {
 }
 
 /* Cheat mode for Opera  - I have to know the number of lines before the first selected character to set the new startSelection value*/
-function twikismartNbLinesBefore(index){
-	var text = twikismartTextarea.value;
-	var ind = twikismartIndexsOf(text,"\r\n");
+function wikismartNbLinesBefore(index){
+	var text = wikismartTextarea.value;
+	var ind = wikismartIndexsOf(text,"\r\n");
 	var nb = 0;
 	if(ind != null && ind.length > 0){
 		for(var i=0;i<ind.length;i++){
@@ -287,7 +287,7 @@ function twikismartNbLinesBefore(index){
 }
 
 /* returns an array with all indexes of the tosearch string in text*/
-function twikismartIndexsOf(text, tosearch){
+function wikismartIndexsOf(text, tosearch){
 	var result = new Array();
 	var result2 = new Array();
 	if(text != null && text.length > 0){
@@ -308,16 +308,16 @@ function twikismartIndexsOf(text, tosearch){
 	return result;
 }
 /* Write some debug info under textarea*/
-function twikismartDebug(text){
-	var divinfo = document.getElementById('twikismartinfo');
-	divinfo.className="twikismartinfo"+smartEditorIECssClass;
+function wikismartDebug(text){
+	var divinfo = document.getElementById('wikismartinfo');
+	divinfo.className="wikismartinfo"+smartEditorIECssClass;
 	var tmptext = document.createElement('div');
 	tmptext.innerHTML = text;
 	divinfo.appendChild(tmptext);
 }
 
 /* Test if text is an empty string*/
-function twikismartIsEmptyString(text){
+function wikismartIsEmptyString(text){
 	count = 0;
 	if(text != null && text.length > 0){
 		while(text.charAt(count) == " "){
@@ -335,7 +335,7 @@ function twikismartIsEmptyString(text){
 	return false;
 }
 
-function twikismartIndexOfFirstCharacter(text){
+function wikismartIndexOfFirstCharacter(text){
 	if(text!=null && text.length > 0){
 		var currentPos = 0;
 		while(text.length>0 && text.indexOf(" ")==0){
@@ -349,7 +349,7 @@ function twikismartIndexOfFirstCharacter(text){
 	}
 }
 
-function twikismartIndexOfLastCharacter(text){
+function wikismartIndexOfLastCharacter(text){
 	if(text!=null && text.length > 0){
 		var currentPos = text.length-1;
 		while(text.length>0 && text.lastIndexOf(" ")==(text.length-1)){
@@ -363,9 +363,9 @@ function twikismartIndexOfLastCharacter(text){
 	}
 }
 
-function twikismartGetLines(mySelection){
+function wikismartGetLines(mySelection){
 	var text = mySelection;
-	var myarray = twikismartIndexsOf(text,"\n");
+	var myarray = wikismartIndexsOf(text,"\n");
 	var textarray = new Array();
 	if(myarray != null && myarray.length > 0){
 		textarray.push(text.substring(0,myarray[0]));
@@ -380,7 +380,7 @@ function twikismartGetLines(mySelection){
 	return textarray;
 }
 
-function twikismartIndexOfBulletOrNumList(text){
+function wikismartIndexOfBulletOrNumList(text){
 	var result = -1;
 	var stringres = "";
 	if(text.indexOf("   1 ") >= 0){
@@ -389,7 +389,7 @@ function twikismartIndexOfBulletOrNumList(text){
 			result++;	
 		}
 		stringres+="1 ";
-		if(text.length == 2 || (text.length > 2 && twikismartIsEmptyString(text.substring(2,text.length)))){
+		if(text.length == 2 || (text.length > 2 && wikismartIsEmptyString(text.substring(2,text.length)))){
 			listtodelete = true;
 			return -1;
 		}
@@ -402,7 +402,7 @@ function twikismartIndexOfBulletOrNumList(text){
 				result++;
 			}
 			stringres+="* ";
-			if(text.length == 2 || (text.length > 2 && twikismartIsEmptyString(text.substring(2,text.length)))){
+			if(text.length == 2 || (text.length > 2 && wikismartIsEmptyString(text.substring(2,text.length)))){
 				listtodelete = true;
 				return -1;
 			}
@@ -413,7 +413,7 @@ function twikismartIndexOfBulletOrNumList(text){
 
 // Returns value from 1 to 6 to give the Heading value - returns -1 else no heading detected
 // The given text musn't contain \n character
-function twikismartContainsHeading(text){
+function wikismartContainsHeading(text){
 	if(text != null && text.length > 3){
 		if(text.indexOf("---") == 0){
 			if(text.indexOf("---++++++") == 0){	
@@ -455,16 +455,16 @@ function twikismartContainsHeading(text){
 	return -1;
 }
 
-function twikismartParseCustomerFunctions(){
-	if(twikismartCustomerPreferences != null && twikismartCustomerPreferences.length > 0){
-		twikismartCustomerPreferences = twikismartReplaceAll(twikismartCustomerPreferences);
-		var tsIndexesOfStartElements = twikismartIndexsOf(twikismartCustomerPreferences,"<tselement>");
-		var tsIndexesOfEndElements = twikismartIndexsOf(twikismartCustomerPreferences,"</tselement>");
+function wikismartParseCustomerFunctions(){
+	if(wikismartCustomerPreferences != null && wikismartCustomerPreferences.length > 0){
+		wikismartCustomerPreferences = wikismartReplaceAll(wikismartCustomerPreferences);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartCustomerPreferences,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartCustomerPreferences,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = twikismartCustomerPreferences.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartCustomerPreferences.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name
@@ -492,8 +492,8 @@ function twikismartParseCustomerFunctions(){
 					}
 					if(elementIsValid){
 						
-						twikismartCustomerStrings.push(tsElementString);
-						twikismartCustomerFunctionNames.push(tsElementName);
+						wikismartCustomerStrings.push(tsElementString);
+						wikismartCustomerFunctionNames.push(tsElementName);
 					}
 					
 				}
@@ -511,16 +511,16 @@ function twikismartParseCustomerFunctions(){
 	}
 }
 
-function twikismartParseWebFunctions(){
-	if(twikismartWebPreferences != null && twikismartWebPreferences.length > 0){
-		twikismartWebPreferences = twikismartReplaceAll(twikismartWebPreferences);
-		var tsIndexesOfStartElements = twikismartIndexsOf(twikismartWebPreferences,"<tselement>");
-		var tsIndexesOfEndElements = twikismartIndexsOf(twikismartWebPreferences,"</tselement>");
+function wikismartParseWebFunctions(){
+	if(wikismartWebPreferences != null && wikismartWebPreferences.length > 0){
+		wikismartWebPreferences = wikismartReplaceAll(wikismartWebPreferences);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartWebPreferences,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartWebPreferences,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = twikismartWebPreferences.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartWebPreferences.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name
@@ -548,8 +548,8 @@ function twikismartParseWebFunctions(){
 					}
 					if(elementIsValid){
 						
-						twikismartWebStrings.push(tsElementString);
-						twikismartWebFunctionNames.push(tsElementName);
+						wikismartWebStrings.push(tsElementString);
+						wikismartWebFunctionNames.push(tsElementName);
 					}
 					
 				}
@@ -567,16 +567,16 @@ function twikismartParseWebFunctions(){
 	}
 }
 
-function twikismartParseSiteFunctions(){
+function wikismartParseSiteFunctions(){
 
-	if(twikismartSitePreferences != null && twikismartSitePreferences.length > 0){
-		twikismartSitePreferences = twikismartReplaceAll(twikismartSitePreferences);
-		var tsIndexesOfStartElements = twikismartIndexsOf(twikismartSitePreferences,"<tselement>");
-		var tsIndexesOfEndElements = twikismartIndexsOf(twikismartSitePreferences,"</tselement>");
+	if(wikismartSitePreferences != null && wikismartSitePreferences.length > 0){
+		wikismartSitePreferences = wikismartReplaceAll(wikismartSitePreferences);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartSitePreferences,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartSitePreferences,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = twikismartSitePreferences.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartSitePreferences.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name
@@ -602,8 +602,8 @@ function twikismartParseSiteFunctions(){
 					}
 					if(elementIsValid){
 						
-						twikismartSiteStrings.push(tsElementString);
-						twikismartSiteFunctionNames.push(tsElementName);
+						wikismartSiteStrings.push(tsElementString);
+						wikismartSiteFunctionNames.push(tsElementName);
 					}
 				}
 			}
@@ -625,7 +625,7 @@ function smartEditorDoGetWebs(){
 			return; 
 		}
 	} 
-	var address = twikismartWikiHomeURL+'?skin=smarteditorweblist';
+	var address = wikismartWikiHomeURL+'?skin=smarteditorweblist';
 	var smartResponse ="";
 	req.open("GET", address, true);
 	req.onreadystatechange = function() { 
@@ -643,8 +643,8 @@ function smartEditInitWebs(text){
 		var webSelect = document.getElementById("smartEditorWebSelectElement");
 		//document.getElementById("smartEditorWebSelectElementTable").style.width = "100%";
 		//document.getElementById("smartEditorWebSelectElementTable").style.margin = "0px";
-		webSelect.value = twikismartCurrentWeb;
-		selectWebClicked(twikismartCurrentWeb);
+		webSelect.value = wikismartCurrentWeb;
+		selectWebClicked(wikismartCurrentWeb);
 		webSelect.onchange = function(){selectWebClicked(webSelect.value)};
 	}
 }
@@ -669,7 +669,7 @@ function smartEditorDoGetWebTopics(web){
 			return; 
 		}
 	} 
-	var address = twikismartWikiHomeURL+"/"+web+'?skin=smarteditorwebtopiclist';
+	var address = wikismartWikiHomeURL+"/"+web+'?skin=smarteditorwebtopiclist';
 	//alert("Address : "+address);
 	var smartResponse ="";
 	req.open("GET", address, true);
@@ -682,17 +682,17 @@ function smartEditorDoGetWebTopics(web){
 }
 
 function smartEditInitWebTopics(text){
-	twikismartParseTopics(text);
+	wikismartParseTopics(text);
 }
 
-function twikismartParseTopics(webTopics){ 
+function wikismartParseTopics(webTopics){ 
 
 	smartEditTopicList = new Array();	
 
 	if(webTopics != null && webTopics.length > 0){
-		webTopics = twikismartReplaceAll(webTopics);
-		var tsIndexesOfStartElements = twikismartIndexsOf(webTopics,"<topic>");
-		var tsIndexesOfEndElements = twikismartIndexsOf(webTopics,"</topic>");
+		webTopics = wikismartReplaceAll(webTopics);
+		var tsIndexesOfStartElements = wikismartIndexsOf(webTopics,"<topic>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(webTopics,"</topic>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
@@ -706,16 +706,16 @@ function twikismartParseTopics(webTopics){
 	smartEditInitAutoCompletion(smartEditTopicList, "smartEditorInputTopic", true);
 }
 
-function twikismartParseCustomerSmileys(){
-	if(twikismartTWikiUserIcons != null && twikismartTWikiUserIcons.length > 0){
-		twikismartTWikiUserIcons = twikismartReplaceAll(twikismartTWikiUserIcons);
-		var tsIndexesOfStartElements = twikismartIndexsOf(twikismartTWikiUserIcons,"<tselement>");
-		var tsIndexesOfEndElements = twikismartIndexsOf(twikismartTWikiUserIcons,"</tselement>");
+function wikismartParseCustomerSmileys(){
+	if(wikismartTWikiUserIcons != null && wikismartTWikiUserIcons.length > 0){
+		wikismartTWikiUserIcons = wikismartReplaceAll(wikismartTWikiUserIcons);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartTWikiUserIcons,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartTWikiUserIcons,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = twikismartTWikiUserIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartTWikiUserIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name
@@ -743,8 +743,8 @@ function twikismartParseCustomerSmileys(){
 					}
 					if(elementIsValid){
 						
-						twikismartCustomerIcons.push(tsElementString);
-						twikismartCustomerIconsNames.push(tsElementName);
+						wikismartCustomerIcons.push(tsElementString);
+						wikismartCustomerIconsNames.push(tsElementName);
 					}
 					
 				}
@@ -762,16 +762,16 @@ function twikismartParseCustomerSmileys(){
 	}
 }
 
-function twikismartParseWebSmileys(){
-	if(twikismartTWikiWebIcons != null && twikismartTWikiWebIcons.length > 0){
-		twikismartTWikiWebIcons = twikismartReplaceAll(twikismartTWikiWebIcons);
-		var tsIndexesOfStartElements = twikismartIndexsOf(twikismartTWikiWebIcons,"<tselement>");
-		var tsIndexesOfEndElements = twikismartIndexsOf(twikismartTWikiWebIcons,"</tselement>");
+function wikismartParseWebSmileys(){
+	if(wikismartTWikiWebIcons != null && wikismartTWikiWebIcons.length > 0){
+		wikismartTWikiWebIcons = wikismartReplaceAll(wikismartTWikiWebIcons);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartTWikiWebIcons,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartTWikiWebIcons,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = twikismartTWikiWebIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartTWikiWebIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name
@@ -799,8 +799,8 @@ function twikismartParseWebSmileys(){
 					}
 					if(elementIsValid){
 						
-						twikismartWebIcons.push(tsElementString);
-						twikismartWebIconsNames.push(tsElementName);
+						wikismartWebIcons.push(tsElementString);
+						wikismartWebIconsNames.push(tsElementName);
 					}
 					
 				}
@@ -818,15 +818,15 @@ function twikismartParseWebSmileys(){
 	}
 }
 
-function twikismartParseSiteSmileys(){
-	if(twikismartTWikiSiteIcons != null && twikismartTWikiSiteIcons.length > 0){
-		twikismartTWikiSiteIcons = twikismartReplaceAll(twikismartTWikiSiteIcons);
-		var tsIndexesOfStartElements = twikismartIndexsOf(twikismartTWikiSiteIcons,"<tselement>");
-		var tsIndexesOfEndElements = twikismartIndexsOf(twikismartTWikiSiteIcons,"</tselement>");
+function wikismartParseSiteSmileys(){
+	if(wikismartTWikiSiteIcons != null && wikismartTWikiSiteIcons.length > 0){
+		wikismartTWikiSiteIcons = wikismartReplaceAll(wikismartTWikiSiteIcons);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartTWikiSiteIcons,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartTWikiSiteIcons,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = twikismartTWikiSiteIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartTWikiSiteIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name
@@ -852,8 +852,8 @@ function twikismartParseSiteSmileys(){
 					}
 					if(elementIsValid){
 						
-						twikismartSiteIcons.push(tsElementString);
-						twikismartSiteIconsNames.push(tsElementName);
+						wikismartSiteIcons.push(tsElementString);
+						wikismartSiteIconsNames.push(tsElementName);
 					}
 				}
 			}

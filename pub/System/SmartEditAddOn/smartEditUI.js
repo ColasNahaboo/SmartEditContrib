@@ -96,20 +96,20 @@ function smartEditCreateInsertRowData(text, value, className, id){
 function smartEditApplyActionForInsertData(theButton, theValue, id){
 	theButton.onclick = function (){	
 		smartEditCloseInsert(id);
-		twikismartInsertSimpleTagButNotInit(theValue);
+		wikismartInsertSimpleTagButNotInit(theValue);
 	};
 }
 
 function smartEditGetBoldButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"bold.gif";
+	myimg.src = wikismartScriptURL+"bold.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert bold tags";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;	
 	thedata.appendChild(myimg);
 	smartEditorBoldButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInsertBold();
+		wikismartInsertBold();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
 		thedata.onmouseover = function () {thedata.className = "smarteditButtonTDPressed"+smartEditorIECssClass;};
@@ -120,13 +120,13 @@ function smartEditGetBoldButton(){
 
 function smartEditGetSelectLineButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"line.gif";
+	myimg.src = wikismartScriptURL+"line.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Select whole line";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;	
 	thedata.appendChild(myimg);
 	thedata.onclick = function () {
-		twikismartSelectEntireLine();
+		wikismartSelectEntireLine();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
 		thedata.onmouseover = function () {thedata.className = "smarteditButtonTDPressed"+smartEditorIECssClass;};
@@ -137,15 +137,15 @@ function smartEditGetSelectLineButton(){
 
 function smartEditGetInsertSmileyButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"smiley.png";
+	myimg.src = wikismartScriptURL+"smiley.png";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert a TWiki Icon";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;	
 	thedata.appendChild(myimg);
 	thedata.onclick = function () {
-		twikismartInitializeAllAttributesForIE();
+		wikismartInitializeAllAttributesForIE();
 		smartEditToggleSmileys(thedata);
-		//twikismartDebug("OLA");
+		//wikismartDebug("OLA");
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
 		thedata.onmouseover = function () {thedata.className = "smarteditButtonTDPressed"+smartEditorIECssClass;};
@@ -156,13 +156,13 @@ function smartEditGetInsertSmileyButton(){
 
 function smartEditGetColorButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"forecolor.gif";
+	myimg.src = wikismartScriptURL+"forecolor.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Choose and apply a text color";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;	
 	thedata.appendChild(myimg);
 	thedata.onclick = function () {
-		twikismartInitializeAllAttributesForIE();
+		wikismartInitializeAllAttributesForIE();
 		smartEditToggleColors(thedata);
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -201,7 +201,7 @@ function smartEditRedoEnabled(value){
 
 function smartEditGetExpandButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"expand.gif";
+	myimg.src = wikismartScriptURL+"expand.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "More styles";
 	thedata.className = "smarteditExpandButton"+smartEditorIECssClass;
@@ -218,7 +218,7 @@ function smartEditGetExpandButton(){
 
 function smartEditGetH1Row(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"h1.gif";
+	myimg.src = wikismartScriptURL+"h1.gif";
 	var theRowToReturn = document.createElement("TR");
 	var thedata = smartEditCreateTD();
 	var theleftColumn = smartEditCreateTD();
@@ -230,7 +230,7 @@ function smartEditGetH1Row(){
 	theRowToReturn.appendChild(theleftColumn);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartFormatText("---+ ");
+		wikismartFormatText("---+ ");
 		smartEditCloseStyles();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -242,7 +242,7 @@ function smartEditGetH1Row(){
 
 function smartEditGetH2Row(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"h2.gif";
+	myimg.src = wikismartScriptURL+"h2.gif";
 	var theRowToReturn = document.createElement("TR");
 	var thedata = smartEditCreateTD();
 	var theleftColumn = smartEditCreateTD();
@@ -254,7 +254,7 @@ function smartEditGetH2Row(){
 	theRowToReturn.appendChild(theleftColumn);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartFormatText("---++ ");
+		wikismartFormatText("---++ ");
 		smartEditCloseStyles();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -266,7 +266,7 @@ function smartEditGetH2Row(){
 
 function smartEditGetH3Row(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"h3.gif";
+	myimg.src = wikismartScriptURL+"h3.gif";
 	var theRowToReturn = document.createElement("TR");
 	var thedata = smartEditCreateTD();
 	var theleftColumn = smartEditCreateTD();
@@ -278,7 +278,7 @@ function smartEditGetH3Row(){
 	theRowToReturn.appendChild(theleftColumn);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartFormatText("---+++ ");
+		wikismartFormatText("---+++ ");
 		smartEditCloseStyles();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -290,7 +290,7 @@ function smartEditGetH3Row(){
 
 function smartEditGetH4Row(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"h4.gif";
+	myimg.src = wikismartScriptURL+"h4.gif";
 	var theRowToReturn = document.createElement("TR");
 	var thedata = smartEditCreateTD();
 	var theleftColumn = smartEditCreateTD();
@@ -302,7 +302,7 @@ function smartEditGetH4Row(){
 	theRowToReturn.appendChild(theleftColumn);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartFormatText("---++++ ");
+		wikismartFormatText("---++++ ");
 		smartEditCloseStyles();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -314,7 +314,7 @@ function smartEditGetH4Row(){
 
 function smartEditGetH5Row(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"h5.gif";
+	myimg.src = wikismartScriptURL+"h5.gif";
 	var theRowToReturn = document.createElement("TR");
 	var thedata = smartEditCreateTD();
 	var theleftColumn = smartEditCreateTD();
@@ -326,7 +326,7 @@ function smartEditGetH5Row(){
 	theRowToReturn.appendChild(theleftColumn);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartFormatText("---+++++ ");
+		wikismartFormatText("---+++++ ");
 		smartEditCloseStyles();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -338,7 +338,7 @@ function smartEditGetH5Row(){
 
 function smartEditGetH6Row(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"h6.gif";
+	myimg.src = wikismartScriptURL+"h6.gif";
 	var theRowToReturn = document.createElement("TR");
 	var thedata = smartEditCreateTD();
 	var theleftColumn = smartEditCreateTD();
@@ -350,7 +350,7 @@ function smartEditGetH6Row(){
 	theRowToReturn.appendChild(theleftColumn);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartFormatText("---++++++ ");
+		wikismartFormatText("---++++++ ");
 		smartEditCloseStyles();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -364,7 +364,7 @@ function smartEditGetNormalButton(){
 	var theRowToReturn = document.createElement("TR");
 	var thedataIMG = smartEditCreateTD();
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"normal.gif";
+	myimg.src = wikismartScriptURL+"normal.gif";
 	thedataIMG.className = "smarteditSelectOptionImg";
 	thedataIMG.appendChild(myimg);
 	var thedata = smartEditCreateTD();
@@ -375,7 +375,7 @@ function smartEditGetNormalButton(){
 	theRowToReturn.appendChild(thedataIMG);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartNormalizeFormat();
+		wikismartNormalizeFormat();
 		smartEditCloseStyles();
 	;};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -390,7 +390,7 @@ function smartEditGetVerbatimButton(){
 	var thedataIMG = smartEditCreateTD();
 	thedataIMG.className = "smarteditSelectOptionImg";
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"verbatim.gif";
+	myimg.src = wikismartScriptURL+"verbatim.gif";
 	thedataIMG.className = "smarteditSelectOptionImg";
 	thedataIMG.appendChild(myimg);
 	var thedata = smartEditCreateTD();
@@ -401,7 +401,7 @@ function smartEditGetVerbatimButton(){
 	theRowToReturn.appendChild(thedataIMG);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartVerbatim();
+		wikismartVerbatim();
 		smartEditCloseStyles();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -416,7 +416,7 @@ function smartEditGetBlockquoteButton(){
 	var thedataIMG = smartEditCreateTD();
 	thedataIMG.className = "smarteditSelectOptionImg";
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"blockquote.gif";
+	myimg.src = wikismartScriptURL+"blockquote.gif";
 	thedataIMG.className = "smarteditSelectOptionImg";
 	thedataIMG.appendChild(myimg);
 	var thedata = smartEditCreateTD();
@@ -427,7 +427,7 @@ function smartEditGetBlockquoteButton(){
 	theRowToReturn.appendChild(thedataIMG);
 	theRowToReturn.appendChild(thedata);
 	theRowToReturn.onclick = function () {
-		twikismartBlockquote();
+		wikismartBlockquote();
 		smartEditCloseStyles();
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -487,7 +487,7 @@ function smartEditCreateExpandStyleDiv(source){
 	theDivToShow.appendChild(theTable);
 	smartExtendedStylesOpen = true;
 	//document.body.appendChild(theDivToShow);
-	twikismartTextarea.parentNode.appendChild(theDivToShow);
+	wikismartTextarea.parentNode.appendChild(theDivToShow);
 	
 }
 
@@ -531,18 +531,18 @@ function smartEditCloseStyles(){
 	theDivToClose.parentNode.removeChild(theDivToClose);
 	smartExtendedStylesOpen = false;
 	smartExtendedStylesMouseOn = false;
-	twikismartTextarea.focus();
+	wikismartTextarea.focus();
 }
 
 function smartEditGetItalicButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"italic.gif";
+	myimg.src = wikismartScriptURL+"italic.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert italic tags";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	thedata.onclick = function () {
-		twikismartInsertItalic();
+		wikismartInsertItalic();
 		
 	};
 	smartEditorItalicButtons.push(thedata);
@@ -555,14 +555,14 @@ function smartEditGetItalicButton(){
 
 function smartEditGetFormattedButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"code.png";
+	myimg.src = wikismartScriptURL+"code.png";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert formatted - aka typewriter, monospaced font - tags";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	smartEditorFormattedButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInsertFormatted();
+		wikismartInsertFormatted();
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -574,14 +574,14 @@ function smartEditGetFormattedButton(){
 
 function smartEditGetBoldItalicButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"boldItalic.gif";
+	myimg.src = wikismartScriptURL+"boldItalic.gif";
 	var thedata = smartEditCreateTD();
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Insert bold italic tags";
 	thedata.appendChild(myimg);
 	smartEditorBoldItalicButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInsertBoldItalic();
+		wikismartInsertBoldItalic();
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -593,14 +593,14 @@ function smartEditGetBoldItalicButton(){
 
 function smartEditGetBulletListButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"bullist.gif";
+	myimg.src = wikismartScriptURL+"bullist.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert bullet list";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	smartEditorBulletListButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInsertBullet();
+		wikismartInsertBullet();
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -612,14 +612,14 @@ function smartEditGetBulletListButton(){
 
 function smartEditGetNumListButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"numlist.gif";
+	myimg.src = wikismartScriptURL+"numlist.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert numered list";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	smartEditorNumListButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInsertNumList();
+		wikismartInsertNumList();
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -631,14 +631,14 @@ function smartEditGetNumListButton(){
 
 function smartEditGetExternalLinkButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"exthyperlink.png";
+	myimg.src = wikismartScriptURL+"exthyperlink.png";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert external web link";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	smartEditorExternalLinkButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInitializeAllAttributesForIE();
+		wikismartInitializeAllAttributesForIE();
 		smartEditToggleExternalLink(thedata);
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -650,14 +650,14 @@ function smartEditGetExternalLinkButton(){
 
 function smartEditGetInternalLinkButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"wikilink.png";
+	myimg.src = wikismartScriptURL+"wikilink.png";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert a link to a wiki page";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	smartEditorInternalLinkButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInitializeAllAttributesForIE();
+		wikismartInitializeAllAttributesForIE();
 		smartEditToggleInternalLink(thedata);
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -669,14 +669,14 @@ function smartEditGetInternalLinkButton(){
 
 function smartEditGetIndentButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"indent.gif";
+	myimg.src = wikismartScriptURL+"indent.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Indent text";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	smartEditorIndentButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartIndent();
+		wikismartIndent();
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -688,14 +688,14 @@ function smartEditGetIndentButton(){
 
 function smartEditGetOutdentButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"outdent.gif";
+	myimg.src = wikismartScriptURL+"outdent.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Outdent text";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	smartEditorOutdentButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartOutdent();
+		wikismartOutdent();
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -707,14 +707,14 @@ function smartEditGetOutdentButton(){
 
 function smartEditGetHRButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"hr.gif";
+	myimg.src = wikismartScriptURL+"hr.gif";
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert horizontal rule";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
 	smartEditorHRButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInsertHRTag();
+		wikismartInsertHRTag();
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -726,7 +726,7 @@ function smartEditGetHRButton(){
 
 function smartEditGetBRButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"br.gif";
+	myimg.src = wikismartScriptURL+"br.gif";
 	myimg.width = "30";
 	myimg.height = "20";
 	var thedata = smartEditCreateTD();
@@ -735,7 +735,7 @@ function smartEditGetBRButton(){
 	thedata.appendChild(myimg);
 	smartEditorBRButtons.push(thedata);
 	thedata.onclick = function () {
-		twikismartInsertSimpleTag("<br />");
+		wikismartInsertSimpleTag("<br />");
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -747,13 +747,13 @@ function smartEditGetBRButton(){
 
 function smartEditGetNopButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"nop.png";
+	myimg.src = wikismartScriptURL+"nop.png";
 	var thedata = smartEditCreateTD();
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Insert NOP tag to protect wiki markup from expansion";
 	thedata.appendChild(myimg);
 	thedata.onclick = function () {
-		twikismartNop();
+		wikismartNop();
 		
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -765,7 +765,7 @@ function smartEditGetNopButton(){
 
 function smartEditGetSearchButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"loupe.gif";
+	myimg.src = wikismartScriptURL+"loupe.gif";
 	var thedata = smartEditCreateTD();
 	thedata.innerHTML = "Search";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
@@ -781,7 +781,7 @@ function smartEditGetSearchButton(){
 
 function smartEditGetHelpButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"help.gif";
+	myimg.src = wikismartScriptURL+"help.gif";
 	var thedata = smartEditCreateTD();
 
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
@@ -806,7 +806,7 @@ function smartEditOpenHelpDiv(){
 	scw = scw - 400;
 	sch = sch - 300;
 	
-	var myAdd = twikismartWikiHomeURL+"/TWiki/SmartEditAddOnHelp";
+	var myAdd = wikismartWikiHomeURL+"/TWiki/SmartEditAddOnHelp";
 	
 	var newpage=open(myAdd,'popup','width=800,height=600,toolbar=no,scrollbars=yes,resizable=yes,left='+scw+',top='+sch+'');
 	newpage.document.close();
@@ -822,7 +822,7 @@ function smartEditCloseHelp(){
 function smartEditGetPreviewButton(){
 
 	var thedata = smartEditCreateTD();
-	thedata.innerHTML = "<img src=\""+twikismartScriptURL+"preview.gif\"> Preview";
+	thedata.innerHTML = "<img src=\""+wikismartScriptURL+"preview.gif\"> Preview";
 	thedata.className = "smarteditButtonTDDisabled"+smartEditorIECssClass;
 	thedata.title = "Preview the selected topic";
 
@@ -842,7 +842,7 @@ function smartEditGetPreviewButton(){
 function smartEditGetPreviewButtonForExternalLink(){
 
 	var thedata = smartEditCreateTD();
-	thedata.innerHTML = "<img src=\""+twikismartScriptURL+"preview.gif\"> Preview";
+	thedata.innerHTML = "<img src=\""+wikismartScriptURL+"preview.gif\"> Preview";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Preview the given link into a new page";
 
@@ -861,7 +861,7 @@ function smartEditGetPreviewButtonForExternalLink(){
 function smartEditGetOkButtonForInsertWikiLink(){
 
 	var thedata = smartEditCreateTD();
-	thedata.innerHTML = "<img src=\""+twikismartScriptURL+"ok.gif\"> Insert link";
+	thedata.innerHTML = "<img src=\""+wikismartScriptURL+"ok.gif\"> Insert link";
 	thedata.className = "smarteditButtonTDDisabled"+smartEditorIECssClass;
 	thedata.title = "Insert a link to the selected topic";
 	thedata.noWrap = true;
@@ -889,7 +889,7 @@ function smartEditGetOkButtonForInsertWikiLink(){
 function smartEditGetOkButtonForInsertExternalLink(){
 
 	var thedata = smartEditCreateTD();
-	thedata.innerHTML = "<img src=\""+twikismartScriptURL+"ok.gif\"> Insert link";
+	thedata.innerHTML = "<img src=\""+wikismartScriptURL+"ok.gif\"> Insert link";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Insert this link";
 
@@ -908,7 +908,7 @@ function smartEditGetOkButtonForInsertExternalLink(){
 }
 
 function smartEditGetNextOccurenceButton(){
-	var myimg = "<img src=\""+twikismartScriptURL+"testn.gif\">";
+	var myimg = "<img src=\""+wikismartScriptURL+"testn.gif\">";
 	var thedata = smartEditCreateTD();
 	thedata.innerHTML = myimg+" Next occurence";
 	thedata.className = "smarteditButtonTDDisabled"+smartEditorIECssClass;
@@ -918,7 +918,7 @@ function smartEditGetNextOccurenceButton(){
 
 	thedata.noWrap = true;
 	thedata.style.width = "15%"; // 160px
-	thedata.onclick = function () {twikismartHighLightNextOccurenceFromTop();};
+	thedata.onclick = function () {wikismartHighLightNextOccurenceFromTop();};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
 		smartEditorChangeClassNameForIE(thedata);
 	}
@@ -934,7 +934,7 @@ function smartEditorChangeClassNameForIE(thedata){
 
 function smartEditGetPreviousOccurenceButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"testp.gif";
+	myimg.src = wikismartScriptURL+"testp.gif";
 	var thedata = smartEditCreateTD();
 	thedata.innerHTML = "Previous occurence";
 	thedata.className = "smarteditButtonTDDisabled"+smartEditorIECssClass;
@@ -945,7 +945,7 @@ function smartEditGetPreviousOccurenceButton(){
 	thedata.noWrap = true;
 	thedata.style.width = "15%"; // 170px
 	thedata.align = "center";
-	thedata.onclick = function () {twikismartHighLightNextOccurenceFromBottom();};
+	thedata.onclick = function () {wikismartHighLightNextOccurenceFromBottom();};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
 		smartEditorChangeClassNameForIE(thedata);
 	}
@@ -956,7 +956,7 @@ function smartEditGetPreviousOccurenceButton(){
 function smartEditGetCloseButtonForWikiLink(){
 
 	var thedata = smartEditCreateTD();
-	thedata.innerHTML = "Close <img src=\""+twikismartScriptURL+"close.gif\">";
+	thedata.innerHTML = "Close <img src=\""+wikismartScriptURL+"close.gif\">";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Close wiki link chooser";
 	thedata.noWrap = true;
@@ -975,7 +975,7 @@ function smartEditGetCloseButtonForWikiLink(){
 function smartEditGetCloseButtonForExternalLink(){
 
 	var thedata = smartEditCreateTD();
-	thedata.innerHTML = "Close <img src=\""+twikismartScriptURL+"close.gif\">";
+	thedata.innerHTML = "Close <img src=\""+wikismartScriptURL+"close.gif\">";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Close external link chooser";
 	thedata.noWrap = true;
@@ -994,7 +994,7 @@ function smartEditGetCloseButtonForExternalLink(){
 function smartEditGetCloseButton(){
 
 	var thedata = smartEditCreateTD();
-	thedata.innerHTML = "Close <img src=\""+twikismartScriptURL+"close.gif\">";
+	thedata.innerHTML = "Close <img src=\""+wikismartScriptURL+"close.gif\">";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Close search";
 	thedata.align = "center";
@@ -1025,7 +1025,7 @@ function smartEditGetAutoFitButton(){
 
 function smartEditGetIncreaseHeightButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"down.jpg";
+	myimg.src = wikismartScriptURL+"down.jpg";
 	var thedata = smartEditCreateTD();
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Increase editing window height";
@@ -1040,7 +1040,7 @@ function smartEditGetIncreaseHeightButton(){
 
 function smartEditGetDecreaseHeightButton(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"up.jpg";
+	myimg.src = wikismartScriptURL+"up.jpg";
 	var thedata = smartEditCreateTD();
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.title = "Decrease editing window height";
@@ -1055,7 +1055,7 @@ function smartEditGetDecreaseHeightButton(){
 
 function smartEditGetSeparator(){
 	var myimg = document.createElement("IMG");
-	myimg.src = twikismartScriptURL+"separator.gif";
+	myimg.src = wikismartScriptURL+"separator.gif";
 	var thedata = smartEditCreateTD();
 	thedata.className = "smarteditSeparatorTD"+smartEditorIECssClass;
 	thedata.appendChild(myimg);
@@ -1065,10 +1065,10 @@ function smartEditGetSeparator(){
 function smartEditGetStyles(){
 	var thedata = smartEditCreateTD();
 	thedata.title = "Set text style";
-	thedata.innerHTML = "<img src=\""+twikismartScriptURL+"styles.gif"+"\">Styles<img src=\""+twikismartScriptURL+"expand.gif\">";
+	thedata.innerHTML = "<img src=\""+wikismartScriptURL+"styles.gif"+"\">Styles<img src=\""+wikismartScriptURL+"expand.gif\">";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;
 	thedata.onclick = function (){
-		twikismartInitializeAllAttributesForIE();
+		wikismartInitializeAllAttributesForIE();
 		smartEditToggleStyles(thedata);
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -1091,18 +1091,18 @@ function smartEditGetCheatTD(){
 	//smartCheatInput.style.backgroundColor = "#e9eaf2";
 	//smartCheatInput.style.color = "#e9eaf2";
 	newTD.appendChild(smartCheatInput);
-	newTD.onfocus = function(){twikismartTextarea.focus();};
+	newTD.onfocus = function(){wikismartTextarea.focus();};
 	return newTD;
 }
 
-function twikismartGetInsertButton(){
+function wikismartGetInsertButton(){
 	var thedata = smartEditCreateTD();
 	thedata.title = "Insert a commonly used wiki constructs"; 
-	var test = "<img src=\""+twikismartScriptURL+"strings.png\">";
+	var test = "<img src=\""+wikismartScriptURL+"strings.png\">";
 	thedata.innerHTML = test;
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;	
 	thedata.onclick = function () {
-		twikismartInitializeAllAttributesForIE();
+		wikismartInitializeAllAttributesForIE();
 		smartEditToggleInsert(thedata);
 	};
 	if(!is_firefox && (navigator.userAgent.toLowerCase().indexOf("opera") == -1)){
@@ -1118,15 +1118,15 @@ function smartEditorGetSearchRow(){
 	rowSearch = document.createElement("TR");
 	rowSearch.style.display = "none";
 	var thedata = smartEditCreateTD();
-	twikismartTopSearch = document.createElement("INPUT");
-	twikismartTopSearch.type = "text";
-	twikismartTopSearch.size = "35";
+	wikismartTopSearch = document.createElement("INPUT");
+	wikismartTopSearch.type = "text";
+	wikismartTopSearch.size = "35";
 	thedata.noWrap = true;
 	thedata.style.width = "20%"; // 200px
-	twikismartTopSearch.className = "twikismartSearch"+smartEditorIECssClass;
-	twikismartTopSearch.onfocus = function () {twikismartTopSearchHasFocus = !twikismartTopSearchHasFocus;};
-	twikismartTopSearch.onblur = function () {twikismartTopSearchHasFocus = !twikismartTopSearchHasFocus;};
-	thedata.appendChild(twikismartTopSearch);
+	wikismartTopSearch.className = "wikismartSearch"+smartEditorIECssClass;
+	wikismartTopSearch.onfocus = function () {wikismartTopSearchHasFocus = !wikismartTopSearchHasFocus;};
+	wikismartTopSearch.onblur = function () {wikismartTopSearchHasFocus = !wikismartTopSearchHasFocus;};
+	thedata.appendChild(wikismartTopSearch);
 	thedata.className = "smartEditSearchLineInvisible"+smartEditorIECssClass;
 	var thedata2 = document.createElement("TD");
 	thedata2.innerHTML = "Search for : ";
@@ -1156,7 +1156,7 @@ function smartEditorGetSearchRow(){
 	theRowTable.appendChild(theRowTbody);
 	theRowTbody.appendChild(rowSearch);
 	var thesmartEditorRowSearch = document.createElement("TR");
-	thesmartEditorRowSearch.id = "twikismartSearchTableRow";
+	thesmartEditorRowSearch.id = "wikismartSearchTableRow";
 	var thesmartEditorRowSearchTD = document.createElement("TD");
 	if(is_firefox){
 		thesmartEditorRowSearchTD.colSpan = "35";
@@ -1166,7 +1166,7 @@ function smartEditorGetSearchRow(){
 	}
 	thesmartEditorRowSearchTD.appendChild(theRowTable);
 	thesmartEditorRowSearch.appendChild(thesmartEditorRowSearchTD);
-	thesmartEditorRowSearch.className = "twikismartSearchRow"+smartEditorIECssClass;
+	thesmartEditorRowSearch.className = "wikismartSearchRow"+smartEditorIECssClass;
 	//thesmartEditorRowSearch.style.width = "100%";
 	theRowTable.style.textAlign = "left";
 	
@@ -1381,7 +1381,7 @@ function smartEditCreateToolbar(){
 	row.appendChild(smartEditGetHRButton());
 	row.appendChild(smartEditGetBRButton());
 	row.appendChild(smartEditGetInsertSmileyButton());
-	row.appendChild(twikismartGetInsertButton());
+	row.appendChild(wikismartGetInsertButton());
 	row.appendChild(smartEditGetSeparator());
 	row.appendChild(smartEditGetSearchButton());
 	row.appendChild(smartEditGetSeparator());	
@@ -1408,7 +1408,7 @@ function smartEditCreateToolbar(){
 	return table;
 }
 
-function twikismartInsertAfter(parent, node, referenceNode) {
+function wikismartInsertAfter(parent, node, referenceNode) {
     parent.insertBefore(node, referenceNode.nextSibling);
 }
 
@@ -1419,8 +1419,8 @@ function smartEditorSetClassToButtons(smartlist, smartclass){
 }
 
 function smartEditAutoFit(){
-	twikismartAdjustSize();
-	if(twikismartAdjustActivated){
+	wikismartAdjustSize();
+	if(wikismartAdjustActivated){
 		smartEditorSetClassToButtons(smartEditorAutoFitButtons,"smarteditButtonTDPressed");
 	}
 	else{
@@ -1429,17 +1429,17 @@ function smartEditAutoFit(){
 }
 
 function smartEditIncreaseHeight(){
-	twikismartIncreaseSize();
-	if(twikismartAdjustActivated){
-		twikismartAdjustActivated = false;
+	wikismartIncreaseSize();
+	if(wikismartAdjustActivated){
+		wikismartAdjustActivated = false;
 		smartEditorSetClassToButtons(smartEditorAutoFitButtons,"smarteditButtonTD");
 	}
 }
 
 function smartEditDecreaseHeight(){
-	twikismartDecreaseSize();
-	if(twikismartAdjustActivated){
-		twikismartAdjustActivated = false;
+	wikismartDecreaseSize();
+	if(wikismartAdjustActivated){
+		wikismartAdjustActivated = false;
 		smartEditorSetClassToButtons(smartEditorAutoFitButtons,"smarteditButtonTD");
 	}
 }
@@ -1451,7 +1451,7 @@ function smartEditToggleSearch(smartDataSource){
 		if(sourceButtonRows != null && sourceButtonRows.length > 1){
 			for(var i=1;i<sourceButtonRows.length;i++){
 				var tmp = sourceButtonRows[i];
-				if(tmp.id != null && tmp.id.indexOf("twikismartSearchTableRow") != -1){
+				if(tmp.id != null && tmp.id.indexOf("wikismartSearchTableRow") != -1){
 					toRecall = true; // Si c'est bien dans le meme tableau, c'est qu'il faut juste la fermer // sinon pas touche !
 				}
 			}
@@ -1459,13 +1459,13 @@ function smartEditToggleSearch(smartDataSource){
 		if(smartEditSearchOpen){ // Si c'est deja ouvert et pas dans le meme tableau .. il faut fermer l'autre sous peine de grosses erreurs ...
 			toRecall = !toRecall;
 		}
-		if(document.getElementById("twikismartSearchTableRow") != null){
+		if(document.getElementById("wikismartSearchTableRow") != null){
 			// Alors on le supprime
-			var theRowToDelete = document.getElementById("twikismartSearchTableRow");
+			var theRowToDelete = document.getElementById("wikismartSearchTableRow");
 			theRowToDelete.parentNode.removeChild(theRowToDelete);
 			smartEditSearchOpen = false;
 			smartLastSearchRowSource.className = "smarteditButtonTD"+smartEditorIECssClass;
-			twikismartTextarea.focus();
+			wikismartTextarea.focus();
 		}
 		else{
 			// Sinon on l'ajoute au tableau qui l'a appelé
@@ -1486,7 +1486,7 @@ function smartEditToggleSearch(smartDataSource){
 			smartEditSearchOpen = true;
 			smartDataSource.className = "smarteditButtonTDPressed"+smartEditorIECssClass;
 			smartLastSearchRowSource = smartDataSource;
-			twikismartTopSearch.focus();
+			wikismartTopSearch.focus();
 		}
 		if(toRecall){
 			smartEditToggleSearch(smartDataSource);
@@ -1497,12 +1497,12 @@ function smartEditToggleSearch(smartDataSource){
 
 // A mettre pour le bouton close du search
 function smartEditCloseSearchRow(smartDataSource){
-	var theRowToDelete = document.getElementById("twikismartSearchTableRow");
+	var theRowToDelete = document.getElementById("wikismartSearchTableRow");
 	theRowToDelete.parentNode.removeChild(theRowToDelete);
 	smartEditSearchOpen = false;
 
 	smartLastSearchRowSource.className = "smarteditButtonTD"+smartEditorIECssClass;
-	twikismartTextarea.focus();
+	wikismartTextarea.focus();
 }
 
 
@@ -1533,7 +1533,7 @@ function smartEditToggleInternalLink(smartDataSource){
 			smartEditorRowInternalLink = null;
 			smartLastInternalRowSource.className = "smarteditButtonTD"+smartEditorIECssClass;
 			smartEditFirstWikiLink = true;
-			twikismartTextarea.focus();
+			wikismartTextarea.focus();
 		}
 		else{
 			// Sinon on l'ajoute au tableau qui l'a appelé
@@ -1573,7 +1573,7 @@ function smartEditCloseInternalLink(smartDataSource){
 	if(theCompletionToDelete != null){
 		theCompletionToDelete.parentNode.removeChild(theCompletionToDelete);
 	}
-	twikismartTextarea.focus();
+	wikismartTextarea.focus();
 }
 
 //smartEditInternalLinkOpen smartEditExternalLinkOpen smartEditSearchOpen
@@ -1600,7 +1600,7 @@ function smartEditToggleExternalLink(smartDataSource){
 			smartEditorRowExternalLink = null;
 			smartEditFirstExternalLink = true;
 			smartLastExternalRowSource.className = "smarteditButtonTD"+smartEditorIECssClass;
-			twikismartTextarea.focus();
+			wikismartTextarea.focus();
 		}
 		else{
 			// Sinon on l'ajoute au tableau qui l'a appelé
@@ -1621,8 +1621,8 @@ function smartEditToggleExternalLink(smartDataSource){
 			smartDataSource.parentNode.parentNode.appendChild(smartEditorGetExternalLinkRow());
 			smartEditorRowExternalLink.style.display = "";
 			smartEditExternalLinkOpen = true;
-			twikismartInitializeAllAttributes();
-			var lines = twikismartGetLines(twikismartSelection);
+			wikismartInitializeAllAttributes();
+			var lines = wikismartGetLines(wikismartSelection);
 			smartDataSource.className = "smarteditButtonTDPressed"+smartEditorIECssClass;
 			smartLastExternalRowSource = smartDataSource;
 			var theText = "";
@@ -1649,16 +1649,16 @@ function smartEditCloseExternalLink(smartDataSource){
 	smartEditExternalLinkOpen = false;
 	smartEditorRowExternalLink = null;
 	smartLastExternalRowSource.className = "smarteditButtonTD"+smartEditorIECssClass;
-	twikismartTextarea.focus();
+	wikismartTextarea.focus();
 }
 
 function smartEditorInsertExternalLinkCall(){
 	//if(smartEditFirstExternalLink){
-	twikismartInsertExlink(document.getElementById("smarteditorExternalLinkInput").value, document.getElementById("smarteditorExternalLinkTextInput").value);
+	wikismartInsertExlink(document.getElementById("smarteditorExternalLinkInput").value, document.getElementById("smarteditorExternalLinkTextInput").value);
 		//smartEditFirstExternalLink = false;
 	//}
 	//else{
-	//twikismartInsertExlinkButInit(document.getElementById("smarteditorExternalLinkInput").value, document.getElementById("smarteditorExternalLinkTextInput").value);
+	//wikismartInsertExlinkButInit(document.getElementById("smarteditorExternalLinkInput").value, document.getElementById("smarteditorExternalLinkTextInput").value);
 	//}
 }
 
@@ -1694,28 +1694,28 @@ function smartEditCreateInsertDiv(source){
 	var theTBody = document.createElement("TBODY");
 	
 	////// The new
-	if(twikismartSiteFunctionNames != null && twikismartSiteFunctionNames.length > 0){
+	if(wikismartSiteFunctionNames != null && wikismartSiteFunctionNames.length > 0){
 
-		for(var i=0;i<twikismartSiteFunctionNames.length;i++){
-			var seTheValue = twikismartSiteStrings[i];
-			var seInnerHTML = twikismartSiteFunctionNames[i];
+		for(var i=0;i<wikismartSiteFunctionNames.length;i++){
+			var seTheValue = wikismartSiteStrings[i];
+			var seInnerHTML = wikismartSiteFunctionNames[i];
 			
 			theTBody.appendChild(smartEditCreateInsertRowData(seInnerHTML, seTheValue, "smarteditSelectOption", theDivToShow.id));
 		}
 	}
 	
 	// Web custom functions
-	if(twikismartWebFunctionNames != null && twikismartWebFunctionNames.length > 0){
+	if(wikismartWebFunctionNames != null && wikismartWebFunctionNames.length > 0){
 
-		for(var i=0;i<twikismartWebFunctionNames.length;i++){
-			var seTheValue = twikismartWebStrings[i];
-			var seInnerHTML = twikismartWebFunctionNames[i];
+		for(var i=0;i<wikismartWebFunctionNames.length;i++){
+			var seTheValue = wikismartWebStrings[i];
+			var seInnerHTML = wikismartWebFunctionNames[i];
 			theTBody.appendChild(smartEditCreateInsertRowData(seInnerHTML, seTheValue, "smarteditSelectOption", theDivToShow.id));
 		}
 	}	
 	
 	// Customer functions
-	if(twikismartCustomerFunctionNames != null && twikismartCustomerFunctionNames.length > 0){
+	if(wikismartCustomerFunctionNames != null && wikismartCustomerFunctionNames.length > 0){
 		// Mettre le séparateur pour bien montrer les préférences utilisateur
 		var CustomSeparatorRow = document.createElement("TR");
 		var theleftColumn = smartEditCreateTD();
@@ -1729,9 +1729,9 @@ function smartEditCreateInsertDiv(source){
 		theTBody.appendChild(CustomSeparatorRow);
 		// Fin du séparateur
 		
-		for(var i=0;i<twikismartCustomerFunctionNames.length;i++){
-			var seTheValue = twikismartCustomerStrings[i];
-			var seInnerHTML = twikismartCustomerFunctionNames[i];
+		for(var i=0;i<wikismartCustomerFunctionNames.length;i++){
+			var seTheValue = wikismartCustomerStrings[i];
+			var seInnerHTML = wikismartCustomerFunctionNames[i];
 			
 			theTBody.appendChild(smartEditCreateInsertRowData(seInnerHTML, seTheValue, "smarteditSelectOption", theDivToShow.id));
 		}
@@ -1743,7 +1743,7 @@ function smartEditCreateInsertDiv(source){
 	
 	SmartEditInsertCommonStringOpen = true;
 	//document.body.appendChild(theDivToShow);
-	twikismartTextarea.parentNode.appendChild(theDivToShow);
+	wikismartTextarea.parentNode.appendChild(theDivToShow);
 }
 
 function smartEditToggleInsert(src){
@@ -1789,7 +1789,7 @@ function smartEditCloseInsert(id){
 	} else {
 	        SmartEditInsertSmileyOpen = false;
 	}
-	twikismartTextarea.focus();
+	wikismartTextarea.focus();
 }
 
 function smartEditToggleColors(src){
@@ -1829,7 +1829,7 @@ function smartEditCloseColors(){
 	var theDivToClose = document.getElementById("SmartEditInsertColor");
 	theDivToClose.parentNode.removeChild(theDivToClose);
 	SmartEditInsertColorOpen = false;
-	twikismartTextarea.focus();
+	wikismartTextarea.focus();
 }
 
 function smartEditToggleSmileys(src){
@@ -1870,16 +1870,16 @@ function smartEditCloseSmileys(){
 	var theDivToClose = document.getElementById("SmartEditInsertSmiley");
 	theDivToClose.parentNode.removeChild(theDivToClose);
 	SmartEditInsertSmileyOpen = false;
-	twikismartTextarea.focus();
+	wikismartTextarea.focus();
 }
 
 function smartEditCreateSmileyDiv(source){
 	var theDivToShow = smartEditorGetDynamicDivision(source);// Create a context menu under the source position
 	theDivToShow.id = "SmartEditInsertSmiley";
 	theDivToShow.className = "SmartEditInsertSmiley"+smartEditorIECssClass;
-	theDivToShow.innerHTML = twikismartTWikiIcons;
+	theDivToShow.innerHTML = wikismartTWikiIcons;
 	//document.body.appendChild(theDivToShow);
-	twikismartTextarea.parentNode.appendChild(theDivToShow);
+	wikismartTextarea.parentNode.appendChild(theDivToShow);
 	var smartAllIcons = theDivToShow.getElementsByTagName("IMG");
 	if(smartAllIcons != null && smartAllIcons.length > 0){
 		for(var i=0;i<smartAllIcons.length;i++){
@@ -1895,7 +1895,7 @@ function smartEditApplyActionForIcon(theIcon){
 		var theCheatDiv = document.createElement("DIV");
 		theCheatDiv.appendChild(theIcon);
 		var theText = theCheatDiv.innerHTML;
-		twikismartInsertSimpleTagButNotInit(theText);
+		wikismartInsertSimpleTagButNotInit(theText);
 		smartEditCloseSmileys();
 	};
 }
@@ -1912,28 +1912,28 @@ function smartEditCreateColorDiv(source){
 	var color1 = document.createElement("TD");
 	color1.style.backgroundColor = "white";
 	color1.onclick = function(){
-		twikismartInsertSmartColor("white");
+		wikismartInsertSmartColor("white");
 		smartEditCloseColors();
 	}
 
 	var color2 = document.createElement("TD");
 	color2.style.backgroundColor = "gray";
 	color2.onclick = function(){
-		twikismartInsertSmartColor("gray");
+		wikismartInsertSmartColor("gray");
 		smartEditCloseColors();
 	}
 
 	var color3 = document.createElement("TD");
 	color3.style.backgroundColor = "silver";
 	color3.onclick = function(){
-		twikismartInsertSmartColor("silver");
+		wikismartInsertSmartColor("silver");
 		smartEditCloseColors();
 	}
 
 	var color4 = document.createElement("TD");
 	color4.style.backgroundColor = "black";
 	color4.onclick = function(){
-		twikismartInsertSmartColor("black");
+		wikismartInsertSmartColor("black");
 		smartEditCloseColors();
 	}
 	
@@ -1947,28 +1947,28 @@ function smartEditCreateColorDiv(source){
 	var color5 = document.createElement("TD");
 	color5.style.backgroundColor = "maroon";
 	color5.onclick = function(){
-		twikismartInsertSmartColor("maroon");
+		wikismartInsertSmartColor("maroon");
 		smartEditCloseColors();
 	}
 
 	var color6 = document.createElement("TD");
 	color6.style.backgroundColor = "red";
 	color6.onclick = function(){
-		twikismartInsertSmartColor("red");
+		wikismartInsertSmartColor("red");
 		smartEditCloseColors();
 	}
 
 	var color7 = document.createElement("TD");
 	color7.style.backgroundColor = "purple";
 	color7.onclick = function(){
-		twikismartInsertSmartColor("purple");
+		wikismartInsertSmartColor("purple");
 		smartEditCloseColors();
 	}
 
 	var color8 = document.createElement("TD");
 	color8.style.backgroundColor = "fuchsia";
 	color8.onclick = function(){
-		twikismartInsertSmartColor("fuchsia");
+		wikismartInsertSmartColor("fuchsia");
 		smartEditCloseColors();
 	}
 
@@ -1982,28 +1982,28 @@ function smartEditCreateColorDiv(source){
 	var color9 = document.createElement("TD");
 	color9.style.backgroundColor = "green";
 	color9.onclick = function(){
-		twikismartInsertSmartColor("green");
+		wikismartInsertSmartColor("green");
 		smartEditCloseColors();
 	}
 
 	var color10 = document.createElement("TD");
 	color10.style.backgroundColor = "lime";
 	color10.onclick = function(){
-		twikismartInsertSmartColor("lime");
+		wikismartInsertSmartColor("lime");
 		smartEditCloseColors();
 	}
 
 	var color11 = document.createElement("TD");
 	color11.style.backgroundColor = "olive";
 	color11.onclick = function(){
-		twikismartInsertSmartColor("olive");
+		wikismartInsertSmartColor("olive");
 		smartEditCloseColors();
 	}
 
 	var color12 = document.createElement("TD");
 	color12.style.backgroundColor = "yellow";
 	color12.onclick = function(){
-		twikismartInsertSmartColor("yellow");
+		wikismartInsertSmartColor("yellow");
 		smartEditCloseColors();
 	}
 
@@ -2016,28 +2016,28 @@ function smartEditCreateColorDiv(source){
 	var color13 = document.createElement("TD");
 	color13.style.backgroundColor = "navy";
 	color13.onclick = function(){
-		twikismartInsertSmartColor("navy");
+		wikismartInsertSmartColor("navy");
 		smartEditCloseColors();
 	}
 
 	var color14 = document.createElement("TD");
 	color14.style.backgroundColor = "blue";
 	color14.onclick = function(){
-		twikismartInsertSmartColor("blue");
+		wikismartInsertSmartColor("blue");
 		smartEditCloseColors();
 	}
 
 	var color15 = document.createElement("TD");
 	color15.style.backgroundColor = "teal";
 	color15.onclick = function(){
-		twikismartInsertSmartColor("teal");
+		wikismartInsertSmartColor("teal");
 		smartEditCloseColors();
 	}
 
 	var color16 = document.createElement("TD");
 	color16.style.backgroundColor = "aqua";
 	color16.onclick = function(){
-		twikismartInsertSmartColor("aqua");
+		wikismartInsertSmartColor("aqua");
 		smartEditCloseColors();
 	}
 	
@@ -2056,7 +2056,7 @@ function smartEditCreateColorDiv(source){
 	SmartEditInsertColorOpen = true;
 
 	//document.body.appendChild(theDivToShow);
-	twikismartTextarea.parentNode.appendChild(theDivToShow);
+	wikismartTextarea.parentNode.appendChild(theDivToShow);
 }
 
 function smartEditCreateSmileyDivStringVersion(source){
@@ -2069,28 +2069,28 @@ function smartEditCreateSmileyDivStringVersion(source){
 	var theTBody = document.createElement("TBODY");
 	
 	////// The new
-	if(twikismartSiteIconsNames != null && twikismartSiteIconsNames.length > 0){
+	if(wikismartSiteIconsNames != null && wikismartSiteIconsNames.length > 0){
 
-		for(var i=0;i<twikismartSiteIconsNames.length;i++){
-			var seTheValue = twikismartSiteIcons[i];
-			var seInnerHTML = twikismartSiteIconsNames[i];
+		for(var i=0;i<wikismartSiteIconsNames.length;i++){
+			var seTheValue = wikismartSiteIcons[i];
+			var seInnerHTML = wikismartSiteIconsNames[i];
 			
 			theTBody.appendChild(smartEditCreateInsertRowData(seInnerHTML, seTheValue, "smarteditSelectOption", theDivToShow.id));
 		}
 	}
 	
 	// Web custom functions
-	if(twikismartWebIconsNames != null && twikismartWebIconsNames.length > 0){
+	if(wikismartWebIconsNames != null && wikismartWebIconsNames.length > 0){
 
-		for(var i=0;i<twikismartWebIconsNames.length;i++){
-			var seTheValue = twikismartWebIcons[i];
-			var seInnerHTML = twikismartWebIconsNames[i];
+		for(var i=0;i<wikismartWebIconsNames.length;i++){
+			var seTheValue = wikismartWebIcons[i];
+			var seInnerHTML = wikismartWebIconsNames[i];
 			theTBody.appendChild(smartEditCreateInsertRowData(seInnerHTML, seTheValue, "smarteditSelectOption", theDivToShow.id));
 		}
 	}	
 	
 	// Customer functions
-	if(twikismartCustomerIconsNames != null && twikismartCustomerIconsNames.length > 0){
+	if(wikismartCustomerIconsNames != null && wikismartCustomerIconsNames.length > 0){
 		// Mettre le séparateur pour bien montrer les préférences utilisateur
 		var CustomSeparatorRow = document.createElement("TR");
 		var theleftColumn = smartEditCreateTD();
@@ -2104,9 +2104,9 @@ function smartEditCreateSmileyDivStringVersion(source){
 		theTBody.appendChild(CustomSeparatorRow);
 		// Fin du séparateur
 		
-		for(var i=0;i<twikismartCustomerIconsNames.length;i++){
-			var seTheValue = twikismartCustomerIcons[i];
-			var seInnerHTML = twikismartCustomerIconsNames[i];
+		for(var i=0;i<wikismartCustomerIconsNames.length;i++){
+			var seTheValue = wikismartCustomerIcons[i];
+			var seInnerHTML = wikismartCustomerIconsNames[i];
 			
 			theTBody.appendChild(smartEditCreateInsertRowData(seInnerHTML, seTheValue, "smarteditSelectOption", theDivToShow.id));
 		}
@@ -2118,5 +2118,5 @@ function smartEditCreateSmileyDivStringVersion(source){
 	
 	SmartEditInsertSmileyOpen = true;
 	//document.body.appendChild(theDivToShow);
-	twikismartTextarea.parentNode.appendChild(theDivToShow);
+	wikismartTextarea.parentNode.appendChild(theDivToShow);
 }

@@ -10,7 +10,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 /* SmartEditor style*/
 
-div.twikismartToolbar{
+div.wikismartToolbar{
 	width : 99%;
 	height : 25px;
 	border : 1px solid #60a0e0;
@@ -75,13 +75,13 @@ div.LimitationExceededDiv button:hover{
 	font-weight: bold;
 }
 
-input.twikismartSearch{
+input.wikismartSearch{
 	height : 17px;
 	font-family : Verdana;
 	border : 1px solid #60a0e0;
 }
 
-input.twikismartSearchFound{
+input.wikismartSearchFound{
 	height : 17px;
 	font-family : Verdana;
 	border : 1px solid #60a0e0;
@@ -89,7 +89,7 @@ input.twikismartSearchFound{
 	color : white;
 }
 
-input.twikismartSearchNotFound{
+input.wikismartSearchNotFound{
 	height : 17px;
 	font-family : Verdana;
 	border : 1px solid #60a0e0;
@@ -179,7 +179,7 @@ tr.smartEditTR{
 	border-top : 1px solid #60a0e0;
 }
 
-div.twikismartinfo{
+div.wikismartinfo{
 	font-family : Verdana;
 	font-size : 1.0em;
 	background-color:red;
@@ -187,7 +187,7 @@ div.twikismartinfo{
 	margin-top : 5px; 
 }
 
-tr.twikismartSearchRow{
+tr.wikismartSearchRow{
 	height : 28px;
 }
 
@@ -228,7 +228,7 @@ tr.smartEditorRowInternalLink table{
 	background-image: url("./background-toolbar.gif");
 }
 
-tr.twikismartSearchRow table{
+tr.wikismartSearchRow table{
 	border : 2px groove white;
 	width : 100%;
 	text-align : left;
@@ -236,7 +236,7 @@ tr.twikismartSearchRow table{
 	background-image: url("./background-toolbar.gif");
 }
 
-tr.twikismartSearchRow td{
+tr.wikismartSearchRow td{
 	font-weight: bold;
 }
 
@@ -442,12 +442,12 @@ td.externalLinkButtonIEPressed{
 /*                SearchRow                  */
 /*****************************/
 
-td.twikismartSearchRowIE{
+td.wikismartSearchRowIE{
 	/*height : 28px;*/
 	background-image: url("./bg_ie.gif");
 }
 
-tr.twikismartSearchRowIE table{
+tr.wikismartSearchRowIE table{
 	border : 2px groove white;
 	width : 100%;
 	text-align : left;
@@ -455,14 +455,14 @@ tr.twikismartSearchRowIE table{
 	/*background-image: url("./bg_ie.gif");*/
 }
 
-input.twikismartSearchIE{
+input.wikismartSearchIE{
 	/*height : 17px;*/
 	font-family : Verdana;
 	border : 1px solid #60a0e0;
 	/*background-image: url("./bg_ie.gif");*/
 }
 
-input.twikismartSearchFoundIE{
+input.wikismartSearchFoundIE{
 	/*height : 17px;*/
 	font-family : Verdana;
 	border : 1px solid #60a0e0;
@@ -470,7 +470,7 @@ input.twikismartSearchFoundIE{
 	color : white;
 }
 
-input.twikismartSearchNotFoundIE{
+input.wikismartSearchNotFoundIE{
 	/*height : 17px;*/
 	font-family : Verdana;
 	border : 1px solid #60a0e0;
@@ -555,7 +555,7 @@ tr.smartEditTRIE{
 	background-image: url("./bg_ie.gif");
 }
 
-div.twikismartinfoIE{
+div.wikismartinfoIE{
 	font-family : Verdana;
 	font-size : 1.0em;
 	background-color:red;

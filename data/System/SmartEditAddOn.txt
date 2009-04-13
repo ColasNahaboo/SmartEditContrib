@@ -6,7 +6,8 @@ It takes an alternate approach to the WYSIWYG one, as its goals are
    * be useful, even for experienced wiki users
    * predictability: What you see is what will be saved
    * reliability: use only the standard TEXTAREA of the browsers
-   * be unobstrusive: as long as you do not use the toolbar, you are still using the traditional twiki editor
+   * be unobstrusive: as long as you do not use the toolbar, you are still
+     using the traditional raw wiki editor
 
 The aim is to assist TWiki.WikiSyntax editing by providing the following features as !JavaScript code:
 
@@ -105,10 +106,10 @@ Smart Edit gives you the ability to increase or decrease the textarea height wit
 
 ---++ Add-On Install new release
 
-When a new release is available, you just have to download the zip file and to unzip it from your twiki root directory.
+When a new release is available, you just have to download the zip file and to unzip it from your foswiki root directory.
 
 ---++ Add-On Installation Instructions on pattern-based skins
-   * unzip/untar the plugin at the root level of your twiki install
+   * unzip/untar the plugin at the root level of your foswiki install
    * If you use the default pattern skin, just put in your <nop>Main.TWikiPreferences a
 <verbatim>
       * Set SKIN = smarteditor, pattern

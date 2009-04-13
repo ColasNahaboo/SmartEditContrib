@@ -68,7 +68,7 @@ function smartEditInitAutoCompletion(smartEditElementList, elementToUpdateId, en
 	smartEditAutoCompletionDiv.appendChild(newTable);
 	setCompleteDivSize();
 	//document.body.appendChild(smartEditAutoCompletionDiv);
-	twikismartTextarea.parentNode.appendChild(smartEditAutoCompletionDiv);
+	wikismartTextarea.parentNode.appendChild(smartEditAutoCompletionDiv);
 	// Initialisation des valeurs onclick
 	for(var j=0;j<theTdArray.length;j++){
 		smartEditorCreateAutocompletionLink(theTdArray[j], theValueArray[j]);
@@ -230,30 +230,30 @@ function smartEditorNextOccurence(){
 function smartEditInsertWikiLink(){
 	theAutoCompletionIsFocused = false;
 	var theWebToInsert = "";
-	if(selectedWeb.indexOf(twikismartCurrentWeb) == 0){
+	if(selectedWeb.indexOf(wikismartCurrentWeb) == 0){
 		theWebToInsert = "";
 	}
 	else{
 		theWebToInsert = selectedWeb+".";
 	}
-	twikismartInsertSimpleTagButNotInit(theWebToInsert+selectedTopic);
+	wikismartInsertSimpleTagButNotInit(theWebToInsert+selectedTopic);
 }
 
 function smartEditInsertWikiLinkAndInitialize(){
 	theAutoCompletionIsFocused = false;
 	var theWebToInsert = "";
-	if(selectedWeb.indexOf(twikismartCurrentWeb) == 0){
+	if(selectedWeb.indexOf(wikismartCurrentWeb) == 0){
 		theWebToInsert = "";
 	}
 	else{
 		theWebToInsert = selectedWeb+".";
 	}
-	twikismartInsertSimpleTag(theWebToInsert+selectedTopic);
+	wikismartInsertSimpleTag(theWebToInsert+selectedTopic);
 }
 
 function smartEditOpenPreview(){
 	if(selectedWeb != null && selectedWeb.length > 0 && selectedTopic != null && selectedTopic.length > 0){
-		var theLink = twikismartWikiHomeURL+"/"+selectedWeb+"."+selectedTopic+"?template=koalaprint";
+		var theLink = wikismartWikiHomeURL+"/"+selectedWeb+"."+selectedTopic+"?template=koalaprint";
 		smartEditCreateGenericPreviewPopup(theLink);
 	}
 }

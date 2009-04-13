@@ -7,8 +7,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ****************************/
-var twikismartCtrlPressed = false;
-var twikismartControlScrollTop = 0;
+var wikismartCtrlPressed = false;
+var wikismartControlScrollTop = 0;
 
 var smartIELimitation = 13000;
 var smartFFLimitation = 180000;
@@ -20,16 +20,16 @@ KeyEvents = {
     handled: false,
     updateModifiers: function(e) {
         var modifiers = e.modifier();
-		twikismartShiftPressed = modifiers.shift;
-		twikismartCtrlPressed = modifiers.ctrl;
-		if(is_firefox && twikismartCtrlPressed){
-			twikismartControlScrollTop = twikismartTextarea.scrollTop;
+		wikismartShiftPressed = modifiers.shift;
+		wikismartCtrlPressed = modifiers.ctrl;
+		if(is_firefox && wikismartCtrlPressed){
+			wikismartControlScrollTop = wikismartTextarea.scrollTop;
 		}
-		if(twikismartTextareaHasFocus && twikismartShiftPressed && !is_firefox && !twikismartCtrlPressed){
-			twikismartInitializeAllAttributes();
-			twikismartTextarea.value = twikismartTextareaContent;
-			twikismartSetSelectionRange(twikismartTextarea, twikismartStartIndex, twikismartEndIndex);
-			twikismartTextarea.focus();
+		if(wikismartTextareaHasFocus && wikismartShiftPressed && !is_firefox && !wikismartCtrlPressed){
+			wikismartInitializeAllAttributes();
+			wikismartTextarea.value = wikismartTextareaContent;
+			wikismartSetSelectionRange(wikismartTextarea, wikismartStartIndex, wikismartEndIndex);
+			wikismartTextarea.focus();
 		}
     }
 };
@@ -40,15 +40,15 @@ connect(document, 'onkeydown',
         // http://bugzilla.opendarwin.org/show_bug.cgi?id=3387
 	        if (!KeyEvents.handled) {
 	            var key = e.key();
-				if((twikismartTextareaHasFocus && key.code == 9) || (twikismartCtrlPressed && twikismartTextareaHasFocus && key.code == 90 )){
+				if((wikismartTextareaHasFocus && key.code == 9) || (wikismartCtrlPressed && wikismartTextareaHasFocus && key.code == 90 )){
 					//e.preventDefault();
-					if((key.code == 90 && twikismartCtrlPressed)){
+					if((key.code == 90 && wikismartCtrlPressed)){
 					    if(is_firefox){
-							twikismartInitializeAllAttributes();
-							twikismartTextarea.value = twikismartTextareaContent;
-							twikismartSetSelectionRange(twikismartTextarea, twikismartStartIndex, twikismartStartIndex);
-							smartSetTexScrollForControlZ(twikismartStartIndex);
-							twikismartTextarea.focus();
+							wikismartInitializeAllAttributes();
+							wikismartTextarea.value = wikismartTextareaContent;
+							wikismartSetSelectionRange(wikismartTextarea, wikismartStartIndex, wikismartStartIndex);
+							smartSetTexScrollForControlZ(wikismartStartIndex);
+							wikismartTextarea.focus();
 						}
 					}
 					else{
@@ -57,16 +57,16 @@ connect(document, 'onkeydown',
 					
 				}
 				if(key.code == 13){	
-					if(twikismartTextareaHasFocus){
-						if((is_firefox && twikismartTextarea.value.length <= smartFFLimitation) || (!is_firefox && twikismartTextarea.value.length <= smartIELimitation)){
-							twikismartDetectListContext();
+					if(wikismartTextareaHasFocus){
+						if((is_firefox && wikismartTextarea.value.length <= smartFFLimitation) || (!is_firefox && wikismartTextarea.value.length <= smartIELimitation)){
+							wikismartDetectListContext();
 							if(document.getElementById("infDiv") != null){
 								document.getElementById("infDiv").style.display = "none";
 							}
 						}
 						else{
 							// The textarea contains too much characters ... I disable this functionnality
-							twikismartDetectListContext();
+							wikismartDetectListContext();
 							if(document.getElementById("infDiv") == null){
 								var okinfo = document.createElement("BUTTON");
 								okinfo.innerHTML = "OK";
@@ -97,14 +97,14 @@ connect(document, 'onkeyup',
     function(e) {
 	        var key = e.key();
 			var stopEvent = false;
-			if((twikismartTextareaHasFocus && key.code == 9) || (twikismartCtrlPressed && twikismartTextareaHasFocus && key.code == 90 )){
-				if((key.code == 90 && twikismartCtrlPressed)){
+			if((wikismartTextareaHasFocus && key.code == 9) || (wikismartCtrlPressed && wikismartTextareaHasFocus && key.code == 90 )){
+				if((key.code == 90 && wikismartCtrlPressed)){
 					if(is_firefox){
-						twikismartInitializeAllAttributes();
-						twikismartTextarea.value = twikismartTextareaContent;
-						twikismartSetSelectionRange(twikismartTextarea, twikismartStartIndex, twikismartStartIndex);
-						smartSetTexScrollForControlZ(twikismartStartIndex);
-						twikismartTextarea.focus();
+						wikismartInitializeAllAttributes();
+						wikismartTextarea.value = wikismartTextareaContent;
+						wikismartSetSelectionRange(wikismartTextarea, wikismartStartIndex, wikismartStartIndex);
+						smartSetTexScrollForControlZ(wikismartStartIndex);
+						wikismartTextarea.focus();
 					}
 				}
 				else{
@@ -115,18 +115,18 @@ connect(document, 'onkeyup',
 			else{
 				var tsTextFound = false;
 				// TWiki smart Search Engine
-				if(twikismartTopSearchHasFocus || twikismartBottomSearchHasFocus){
-					twikismartTextToSearch = "";
+				if(wikismartTopSearchHasFocus || wikismartBottomSearchHasFocus){
+					wikismartTextToSearch = "";
 					// Si c'est celui du haut, alors le texte a chercher est celui la
-					if(twikismartTopSearchHasFocus){
-						twikismartTextToSearch = twikismartTopSearch.value;
-						twikismartTopSearch.focus();
+					if(wikismartTopSearchHasFocus){
+						wikismartTextToSearch = wikismartTopSearch.value;
+						wikismartTopSearch.focus();
 					}
-					if(twikismartTextToSearch != null && twikismartTextToSearch.length >0){
-						twikismartTextOccurence = -1;
-						twikismartSearchTextFromLeft();
-						if(twikismartTextOccurence == -1){
-							twikismartTopSearch.className = "twikismartSearchNotFound"+smartEditorIECssClass;
+					if(wikismartTextToSearch != null && wikismartTextToSearch.length >0){
+						wikismartTextOccurence = -1;
+						wikismartSearchTextFromLeft();
+						if(wikismartTextOccurence == -1){
+							wikismartTopSearch.className = "wikismartSearchNotFound"+smartEditorIECssClass;
 							document.getElementById("smartEditSearchNextButton").className = "smarteditButtonTDDisabled"+smartEditorIECssClass;
 							var theButton2 = document.getElementById("smartEditSearchNextButton");
 							theButton2.onmouseover = function(){
@@ -147,12 +147,12 @@ connect(document, 'onkeyup',
 							};
 							
 							
-							var imgwarning = "<img src=\""+twikismartScriptURL+"warning.gif\">";
+							var imgwarning = "<img src=\""+wikismartScriptURL+"warning.gif\">";
 							document.getElementById("smartEditSearchInfoTD").innerHTML = imgwarning+" No match";
 							tsTextFound = false;
 						}
 						else{
-							twikismartTopSearch.className = "twikismartSearchFound"+smartEditorIECssClass;
+							wikismartTopSearch.className = "wikismartSearchFound"+smartEditorIECssClass;
 							document.getElementById("smartEditSearchNextButton").className = "smarteditButtonTD"+smartEditorIECssClass;
 							var theButton = document.getElementById("smartEditSearchNextButton");
 							theButton.onmouseover = function(){
@@ -163,10 +163,10 @@ connect(document, 'onkeyup',
 							};
 							tsTextFound = true;
 						}
-						twikismartTextOccurence = -1; // reset value
+						wikismartTextOccurence = -1; // reset value
 					}
 					else{
-						twikismartTopSearch.className = "twikismartSearch"+smartEditorIECssClass;
+						wikismartTopSearch.className = "wikismartSearch"+smartEditorIECssClass;
 						document.getElementById("smartEditSearchNextButton").className = "smarteditButtonTDDisabled"+smartEditorIECssClass;
 						var theButton5 = document.getElementById("smartEditSearchNextButton");
 						theButton5.onmouseover = function(){
@@ -187,42 +187,42 @@ connect(document, 'onkeyup',
 						tsTextFound = false;
 					}
 					if(key.code == 13 && tsTextFound){
-						twikismartHighLightNextOccurenceFromTop();
+						wikismartHighLightNextOccurenceFromTop();
 						stopEvent = true;
 					}
 				}
 			}
 			if(!stopEvent){
-				if(twikismartShiftPressed && key.code == 9){
+				if(wikismartShiftPressed && key.code == 9){
 					// Désindenter
 					if(!is_opera){
-						twikismartOutdent();
+						wikismartOutdent();
 					}
 				}
 				else{
 					// Indenter
 					if(key.code == 9){
 						if(!is_opera){
-							twikismartIndent();
+							wikismartIndent();
 						}
 					}
 					else{
 						
 						if(key.code == 13){
-							textlength = twikismartTextarea.value.length;
-							if((is_firefox && twikismartTextarea.value.length <= smartFFLimitation) || (!is_firefox && twikismartTextarea.value.length <= smartIELimitation)){
-								twikismartReturnKeyAction();
-								if(twikismartShiftPressed){
+							textlength = wikismartTextarea.value.length;
+							if((is_firefox && wikismartTextarea.value.length <= smartFFLimitation) || (!is_firefox && wikismartTextarea.value.length <= smartIELimitation)){
+								wikismartReturnKeyAction();
+								if(wikismartShiftPressed){
 									// Si c'est le cas ..... trouver l'indentation de la ligne précédente et insérer le br à cet endroit dans la nouvelle ligne
-									twikismartInsertSimpleTagAndNoSelect(twikismartSpaceToAddText+"<br>");
+									wikismartInsertSimpleTagAndNoSelect(wikismartSpaceToAddText+"<br>");
 								}
 							}
 							else{
 								// On effectue quand meme l'action, fonction non desactivee
-								twikismartReturnKeyAction();								
-								if(twikismartShiftPressed){
+								wikismartReturnKeyAction();								
+								if(wikismartShiftPressed){
 									// Si c'est le cas ..... trouver l'indentation de la ligne précédente et insérer le br à cet endroit dans la nouvelle ligne
-									twikismartInsertSimpleTagAndNoSelect(twikismartSpaceToAddText+"<br>");
+									wikismartInsertSimpleTagAndNoSelect(wikismartSpaceToAddText+"<br>");
 								}
 							}
 						}
@@ -257,7 +257,7 @@ connect(document, 'onkeyup',
 connect(document, 'onkeypress', 
     function(e) {
 		var key = e.key();
-		if((twikismartTextareaHasFocus && key.code == 9)){
+		if((wikismartTextareaHasFocus && key.code == 9)){
 			e.preventDefault();
 		}
 		KeyEvents.updateModifiers(e);
@@ -265,6 +265,6 @@ connect(document, 'onkeypress',
 	
 function smartSetTexScrollForControlZ(theIndex){
 	if(is_firefox){
-		twikismartTextarea.scrollTop = twikismartControlScrollTop;
+		wikismartTextarea.scrollTop = wikismartControlScrollTop;
 	}
 }

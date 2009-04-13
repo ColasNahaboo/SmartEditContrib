@@ -23,7 +23,7 @@ Settings are stored as preferences variables. To reference a setting write ==%<n
 
 ---++ Installation Instructions
 	* Download the ZIP file from the Plugin web (see below)
-	* Unzip ==%TOPIC%.zip== in your twiki installation directory. Content:
+	* Unzip ==%TOPIC%.zip== in your wiki installation directory. Content:
 	| *File:* | *Description:* |
 %$MANIFEST%
 	* Run ==%TOPIC%_installer.pl== to automatically check and install other modules that this module depends on. You can also do this step manually. Dependencies:
