@@ -1,14 +1,14 @@
 %TMPL:INCLUDE{"edit"}%
 %TMPL:DEF{"templatestyle"}%
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/TWikiJavascripts/twiki_edit.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/mochikit/lib/MochiKit/MochiKit.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartEngine.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartActions.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditUI.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartEvents.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditAutoCompletion.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditDynamicDivision.js"></script>
-<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartstyle.css"/>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/foswiki_edit.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/mochikit/lib/MochiKit/MochiKit.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartEngine.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartActions.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditUI.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartEvents.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditAutoCompletion.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditDynamicDivision.js"></script>
+<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartstyle.css"/>
 %TMPL:END%
 
 
@@ -20,7 +20,7 @@
 %TMPL:P{"formend"}%
 %TMPL:P{"pagehelp_nojavascript"}%<script type="text/javascript">
 // The script URL - with / at the end
-wikismartScriptURL = '%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/';   
+wikismartScriptURL = '%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/';   
 wikismartWikiHomeURL = '%SCRIPTURL%/view'; 
 wikismartWikiSkin = '%SKIN%';
 // Load all specific preferences
@@ -28,12 +28,12 @@ wikismartSitePreferences = ""+"%SMARTEDITSTRINGSITE%";
 wikismartWebPreferences = ""+"%SMARTEDITSTRINGWEB%";
 wikismartCustomerPreferences = ""+"%SMARTEDITSTRINGUSERS%";
 // 3 following lines to add if you have an old smartedit addon installation
-wikismartTWikiSiteIcons = ""+'%SMARTEDITICONSITE%';
-wikismartTWikiWebIcons = ""+'%SMARTEDITICONWEB%';
-wikismartTWikiUserIcons = ""+'%SMARTEDITICONUSER%';
+wikismartFoswikiSiteIcons = ""+'%SMARTEDITICONSITE%';
+wikismartFoswikiWebIcons = ""+'%SMARTEDITICONWEB%';
+wikismartFoswikiUserIcons = ""+'%SMARTEDITICONUSER%';
 // End of copy
 wikismartCurrentWeb = "%WEB%";
-wikismartTWikiIcons = '%SMARTEDITICONS%';
+wikismartFoswikiIcons = '%SMARTEDITICONS%';
 // To know the id of the textarea ... if it is not 'topic'
 wikismartEdit('topic');
 </script>%TMPL:END%

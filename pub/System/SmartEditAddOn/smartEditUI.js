@@ -139,7 +139,7 @@ function smartEditGetInsertSmileyButton(){
 	var myimg = document.createElement("IMG");
 	myimg.src = wikismartScriptURL+"smiley.png";
 	var thedata = smartEditCreateTD();
-	thedata.title = "Insert a TWiki Icon";
+	thedata.title = "Insert an Icon";
 	thedata.className = "smarteditButtonTD"+smartEditorIECssClass;	
 	thedata.appendChild(myimg);
 	thedata.onclick = function () {
@@ -806,7 +806,7 @@ function smartEditOpenHelpDiv(){
 	scw = scw - 400;
 	sch = sch - 300;
 	
-	var myAdd = wikismartWikiHomeURL+"/TWiki/SmartEditAddOnHelp";
+	var myAdd = wikismartWikiHomeURL+"/System/SmartEditAddOnHelp";
 	
 	var newpage=open(myAdd,'popup','width=800,height=600,toolbar=no,scrollbars=yes,resizable=yes,left='+scw+',top='+sch+'');
 	newpage.document.close();
@@ -1877,7 +1877,7 @@ function smartEditCreateSmileyDiv(source){
 	var theDivToShow = smartEditorGetDynamicDivision(source);// Create a context menu under the source position
 	theDivToShow.id = "SmartEditInsertSmiley";
 	theDivToShow.className = "SmartEditInsertSmiley"+smartEditorIECssClass;
-	theDivToShow.innerHTML = wikismartTWikiIcons;
+	theDivToShow.innerHTML = wikismartFoswikiIcons;
 	//document.body.appendChild(theDivToShow);
 	wikismartTextarea.parentNode.appendChild(theDivToShow);
 	var smartAllIcons = theDivToShow.getElementsByTagName("IMG");

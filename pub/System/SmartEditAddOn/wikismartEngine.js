@@ -707,15 +707,15 @@ function wikismartParseTopics(webTopics){
 }
 
 function wikismartParseCustomerSmileys(){
-	if(wikismartTWikiUserIcons != null && wikismartTWikiUserIcons.length > 0){
-		wikismartTWikiUserIcons = wikismartReplaceAll(wikismartTWikiUserIcons);
-		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartTWikiUserIcons,"<tselement>");
-		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartTWikiUserIcons,"</tselement>");
+	if(wikismartFoswikiUserIcons != null && wikismartFoswikiUserIcons.length > 0){
+		wikismartFoswikiUserIcons = wikismartReplaceAll(wikismartFoswikiUserIcons);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartFoswikiUserIcons,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartFoswikiUserIcons,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = wikismartTWikiUserIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartFoswikiUserIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name
@@ -763,15 +763,15 @@ function wikismartParseCustomerSmileys(){
 }
 
 function wikismartParseWebSmileys(){
-	if(wikismartTWikiWebIcons != null && wikismartTWikiWebIcons.length > 0){
-		wikismartTWikiWebIcons = wikismartReplaceAll(wikismartTWikiWebIcons);
-		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartTWikiWebIcons,"<tselement>");
-		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartTWikiWebIcons,"</tselement>");
+	if(wikismartFoswikiWebIcons != null && wikismartFoswikiWebIcons.length > 0){
+		wikismartFoswikiWebIcons = wikismartReplaceAll(wikismartFoswikiWebIcons);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartFoswikiWebIcons,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartFoswikiWebIcons,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = wikismartTWikiWebIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartFoswikiWebIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name
@@ -819,14 +819,14 @@ function wikismartParseWebSmileys(){
 }
 
 function wikismartParseSiteSmileys(){
-	if(wikismartTWikiSiteIcons != null && wikismartTWikiSiteIcons.length > 0){
-		wikismartTWikiSiteIcons = wikismartReplaceAll(wikismartTWikiSiteIcons);
-		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartTWikiSiteIcons,"<tselement>");
-		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartTWikiSiteIcons,"</tselement>");
+	if(wikismartFoswikiSiteIcons != null && wikismartFoswikiSiteIcons.length > 0){
+		wikismartFoswikiSiteIcons = wikismartReplaceAll(wikismartFoswikiSiteIcons);
+		var tsIndexesOfStartElements = wikismartIndexsOf(wikismartFoswikiSiteIcons,"<tselement>");
+		var tsIndexesOfEndElements = wikismartIndexsOf(wikismartFoswikiSiteIcons,"</tselement>");
 		if(tsIndexesOfStartElements != null && tsIndexesOfEndElements != null && tsIndexesOfEndElements.length == tsIndexesOfStartElements.length){
 			for(var i =0; i< tsIndexesOfEndElements.length;i++){
 				if(tsIndexesOfStartElements[i] < tsIndexesOfEndElements[i]){
-					var tsElement = wikismartTWikiSiteIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
+					var tsElement = wikismartFoswikiSiteIcons.substring(tsIndexesOfStartElements[i]+11,tsIndexesOfEndElements[i]); 
 					var elementIsValid = true;
 					
 					// Process for the element name

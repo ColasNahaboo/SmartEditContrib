@@ -35,7 +35,7 @@ Settings are stored as preferences variables. To reference a setting write ==%<n
 
 ---++ Contrib Info
 
-|  Author: | TWiki:Main/sven |
+|  Author: | Sve Dovedoit |
 |  Copyright &copy;: | <!-- e.g. "2004, SlobSoft Gmbh, All Rights Reserved" --> |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
 |  Dependencies: | %$DEPENDENCIES% |
@@ -48,4 +48,3 @@ Settings are stored as preferences variables. To reference a setting write ==%<n
 
 __Related Topics:__ %SYSTEMWEB%.DefaultPreferences, %USERSWEB%.SitePreferences
 
--- TWiki:Main/sven - %DATE%

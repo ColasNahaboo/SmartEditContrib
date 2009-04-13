@@ -1,9 +1,9 @@
 #################### QUICK INSTALL
 
-Copy the contents to your TWiki install dir:
-  cp -a data  pub  templates YOUR_TWIKI_DIR
+Copy the contents to your Foswiki install dir:
+  cp -a data  pub  templates YOUR_WIKI_DIR
 
-To set the SmartEditorAddOn on all webs, go to your Main.TWikiPreferences 
+To set the SmartEditorAddOn on all webs, go to your Main.SitePreferences 
 and set new skin as follows :
    * Set SKIN = smarteditor, pattern
    
@@ -21,7 +21,7 @@ You will want also to add to this topic:
 
 #################### FULL DOCUMENTATION
 
-Then follow SmartEditAddOn documentation on your wiki in TWiki.SmartEditAddOn
+Then follow SmartEditAddOn documentation on your wiki in System.SmartEditAddOn
 
 Acknowledgements:
    * To Martin Rothbaum for the SmartEditAddon_alt-tab.patch
@@ -33,7 +33,7 @@ For the view & preview template:
 
 // Add in the header:
 
-<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartstyle.css"/>
+<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartstyle.css"/>
 
 
 For the edit template:
@@ -41,14 +41,14 @@ For the edit template:
 
 // Add the javascript in the header: (the last line is the same as view)
 
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/mochikit/lib/MochiKit/MochiKit.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartEngine.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartActions.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditUI.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartEvents.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditAutoCompletion.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditDynamicDivision.js"></script>
-<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartstyle.css"/>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/mochikit/lib/MochiKit/MochiKit.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartEngine.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartActions.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditUI.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartEvents.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditAutoCompletion.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditDynamicDivision.js"></script>
+<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartstyle.css"/>
 
 // Add this just before the main <form:
 
@@ -60,7 +60,7 @@ For the edit template:
 
 <script type="text/javascript">
 // The script URL - with / at the end
-wikismartScriptURL = '%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/';   
+wikismartScriptURL = '%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/';   
 wikismartWikiHomeURL = '%SCRIPTURL%/view'; 
 wikismartWikiSkin = '%SKIN%';
 // Load all specific preferences
@@ -68,12 +68,12 @@ wikismartSitePreferences = ""+"%SMARTEDITSTRINGSITE%";
 wikismartWebPreferences = ""+"%SMARTEDITSTRINGWEB%";
 wikismartCustomerPreferences = ""+"%SMARTEDITSTRINGUSERS%";
 // 3 following lines to add if you have an old smartedit addon installation
-wikismartTWikiSiteIcons = ''+'%SMARTEDITICONSITE%';
-wikismartTWikiWebIcons = ''+'%SMARTEDITICONWEB%';
-wikismartTWikiUserIcons = ''+'%SMARTEDITICONUSER%';
+wikismartFoswikiSiteIcons = ''+'%SMARTEDITICONSITE%';
+wikismartFoswikiWebIcons = ''+'%SMARTEDITICONWEB%';
+wikismartFoswikiUserIcons = ''+'%SMARTEDITICONUSER%';
 // End of copy
 wikismartCurrentWeb = "%WEB%";
-wikismartTWikiIcons = '%SMARTEDITICONS%';
+wikismartFoswikiIcons = '%SMARTEDITICONS%';
 // To know the id of the textarea ... if it is not 'topic'
 wikismartEdit('topic');
 </script>

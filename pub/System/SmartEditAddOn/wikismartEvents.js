@@ -114,7 +114,7 @@ connect(document, 'onkeyup',
 			}
 			else{
 				var tsTextFound = false;
-				// TWiki smart Search Engine
+				// Wiki smart Search Engine
 				if(wikismartTopSearchHasFocus || wikismartBottomSearchHasFocus){
 					wikismartTextToSearch = "";
 					// Si c'est celui du haut, alors le texte a chercher est celui la
