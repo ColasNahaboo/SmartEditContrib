@@ -798,7 +798,7 @@ function smartEditGetHelpButton(){
 	return thedata;
 }
 
-// SmartEditAddOn
+// SmartEditContrib
 
 function smartEditOpenHelpDiv(){
 	var scw = (screen.width / 2);
@@ -806,7 +806,7 @@ function smartEditOpenHelpDiv(){
 	scw = scw - 400;
 	sch = sch - 300;
 	
-	var myAdd = wikismartWikiHomeURL+"/System/SmartEditAddOnHelp";
+	var myAdd = wikismartWikiHomeURL+"/System/SmartEditContribHelp";
 	
 	var newpage=open(myAdd,'popup','width=800,height=600,toolbar=no,scrollbars=yes,resizable=yes,left='+scw+',top='+sch+'');
 	newpage.document.close();

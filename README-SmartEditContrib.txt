@@ -21,7 +21,7 @@ You will want also to add to this topic:
 
 #################### FULL DOCUMENTATION
 
-Then follow SmartEditAddOn documentation on your wiki in System.SmartEditAddOn
+Then follow SmartEditContrib documentation on your wiki in System.SmartEditContrib
 
 Acknowledgements:
    * To Martin Rothbaum for the SmartEditAddon_alt-tab.patch
@@ -33,7 +33,7 @@ For the view & preview template:
 
 // Add in the header:
 
-<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartstyle.css"/>
+<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/wikismartstyle.css"/>
 
 
 For the edit template:
@@ -41,14 +41,14 @@ For the edit template:
 
 // Add the javascript in the header: (the last line is the same as view)
 
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/mochikit/lib/MochiKit/MochiKit.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartEngine.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartActions.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditUI.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartEvents.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditAutoCompletion.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/smartEditDynamicDivision.js"></script>
-<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/wikismartstyle.css"/>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/mochikit/lib/MochiKit/MochiKit.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/wikismartEngine.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/wikismartActions.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/smartEditUI.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/wikismartEvents.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/smartEditAutoCompletion.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/smartEditDynamicDivision.js"></script>
+<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/wikismartstyle.css"/>
 
 // Add this just before the main <form:
 
@@ -60,7 +60,7 @@ For the edit template:
 
 <script type="text/javascript">
 // The script URL - with / at the end
-wikismartScriptURL = '%PUBURLPATH%/%SYSTEMWEB%/SmartEditAddOn/';   
+wikismartScriptURL = '%PUBURLPATH%/%SYSTEMWEB%/SmartEditContrib/';   
 wikismartWikiHomeURL = '%SCRIPTURL%/view'; 
 wikismartWikiSkin = '%SKIN%';
 // Load all specific preferences

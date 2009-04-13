@@ -1,8 +1,8 @@
 %META:TOPICINFO{author="GaelCrova" date="1155721530" format="1.1" version="1.1"}%
-%META:TOPICPARENT{name="SmartEditAddOn"}%
+%META:TOPICPARENT{name="SmartEditContrib"}%
 ---++!! !Smartedit v2 Features and user manual
 %STARTINCLUDE%
-%INCLUDE{"SmartEditAddOnLocal" warn="off"}%
+%INCLUDE{"SmartEditContribLocal" warn="off"}%
 %TOC%
 
 ---+++ Styles
@@ -13,7 +13,7 @@
 
 When you click on the bold button (for example), Smart Editor get your selection and insert the bold tags at the right place. This editor doesn't have a context engine so if you click 2 times on the bold button, you will have 2 bold tags.
 
-<nop>SmartEditAddOn aumatically detect blanks and line break to insert tags at the right place.
+<nop>SmartEditContrib aumatically detect blanks and line break to insert tags at the right place.
 
 ---+++ Lists
 
@@ -87,7 +87,7 @@ Smart Editor gives you the ability to increase or decrease the textarea height w
 
 ---+++ Configure "icon" and "insert string" menus
 
-These manipulations automatically set the content of menus into the <nop>SmartEditAddOn toolbar.
+These manipulations automatically set the content of menus into the <nop>SmartEditContrib toolbar.
 If the syntax is not respected, the content of the variable will not be loaded.
 
 ---++++ The insert Menu
