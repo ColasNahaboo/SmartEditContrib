@@ -1,0 +1,7 @@
+   * simplify syntax of icons/strings. On demand loading?
+   * add all the colors of the WYSIWYG editor
+   * test on IE6 IE7 IE8 opera chrome safari...
+   * variable listing "good" browsers
+   * variable to be disabled per user
+   * enablable plugin?
+   * compress js?
