@@ -1,0 +1,40 @@
+%TMPL:INCLUDE{"edit"}%
+%TMPL:DEF{"templatestyle"}%
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/TWikiJavascripts/twiki_edit.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/mochikit/lib/MochiKit/MochiKit.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartEngine.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartActions.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditUI.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartEvents.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditAutoCompletion.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/smartEditDynamicDivision.js"></script>
+<link rel="stylesheet" type="text/css" href="%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/wikismartstyle.css"/>
+%TMPL:END%
+
+
+%TMPL:DEF{"content"}%<div id="smartEditorTopToolbarID"></div>%TMPL:P{"formstart"}%%TMPL:P{"formtop"}%
+%TMPL:P{"toolbar"}%
+%TMPL:P{"pagehelp"}%
+%TMPL:P{"textarea"}%
+%TMPL:P{"formbottom"}%%TMPL:P{"topicinfo"}%
+%TMPL:P{"formend"}%
+%TMPL:P{"pagehelp_nojavascript"}%<script type="text/javascript">
+// The script URL - with / at the end
+twikismartScriptURL = '%PUBURLPATH%/%TWIKIWEB%/SmartEditAddOn/';   
+twikismartWikiHomeURL = '%SCRIPTURL%/view'; 
+twikismartWikiSkin = '%SKIN%';
+// Load all specific preferences
+twikismartSitePreferences = ""+"%SMARTEDITSTRINGSITE%";
+twikismartWebPreferences = ""+"%SMARTEDITSTRINGWEB%";
+twikismartCustomerPreferences = ""+"%SMARTEDITSTRINGUSERS%";
+// 3 following lines to add if you have an old smartedit addon installation
+twikismartTWikiSiteIcons = ""+'%SMARTEDITICONSITE%';
+twikismartTWikiWebIcons = ""+'%SMARTEDITICONWEB%';
+twikismartTWikiUserIcons = ""+'%SMARTEDITICONUSER%';
+// End of copy
+twikismartCurrentWeb = "%WEB%";
+twikismartTWikiIcons = '%SMARTEDITICONS%';
+// To know the id of the textarea ... if it is not 'topic'
+twikismartEdit('topic');
+</script>%TMPL:END%
+
