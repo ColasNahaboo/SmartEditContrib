@@ -70,11 +70,26 @@ var is_firefox = ((clientPC.indexOf('gecko')!=-1) && (clientPC.indexOf('spoofer'
 function wikismartEdit(textareaid){
 	wikismartTextareaId = textareaid;
 	// If browser is Firefox or IE (Opera and Mac browsers are disabled)
-	if(is_firefox || ((navigator.userAgent.toLowerCase()).indexOf("opera") == -1)){
+	if (is_firefox || ((navigator.userAgent.toLowerCase()).indexOf("opera") == -1)){
 	// Special CSS style for Internet Explorer
 	if(!is_firefox && ((navigator.userAgent.toLowerCase()).indexOf("opera") == -1)){
 		smartEditorIECssClass = "IE";
 	}
+
+	// We try to detect if we are in WYSIWYG mode, and abort if such
+	// look for: <meta name="TINYMCEPLUGIN_INIT" content="..." />
+	// check the alignment on a number of cells in a table. 
+	var head = document.getElementsByTagName('head').item(0);
+	var metas = head.getElementsByTagName("meta"); 
+	var mname;
+	for (var i = 0; i < metas.length; i++) { 
+	  mname = metas[i].getAttribute("name"); 
+	  if ( mname == "TINYMCEPLUGIN_INIT") { 
+	    return -1;
+	  }
+	}
+
+
 	wikismartTextarea = document.getElementById(wikismartTextareaId);
 	wikismartTextAreaRows = wikismartTextarea.rows;
 	wikismartTextarea.onfocus = function(){wikismartTextAreaFocus();};

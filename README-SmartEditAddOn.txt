@@ -1,7 +1,7 @@
 #################### QUICK INSTALL
 
 Copy the contents to your Foswiki install dir:
-  cp -a data  pub  templates YOUR_WIKI_DIR
+  cp -a data  pub  templates lib YOUR_WIKI_DIR
 
 To set the SmartEditorAddOn on all webs, go to your Main.SitePreferences 
 and set new skin as follows :
