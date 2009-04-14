@@ -1966,9 +1966,9 @@ function smartEditCreateColorDiv(source){
 	}
 
 	var color8 = document.createElement("TD");
-	color8.style.backgroundColor = "fuchsia";
+	color8.style.backgroundColor = "pink";
 	color8.onclick = function(){
-		wikismartInsertSmartColor("fuchsia");
+		wikismartInsertSmartColor("pink");
 		smartEditCloseColors();
 	}
 
