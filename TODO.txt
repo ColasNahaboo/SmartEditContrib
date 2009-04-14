@@ -1,7 +1,6 @@
 TODO
    * simplify syntax of icons/strings. name: value %SESEP%
       * what is wikismartFoswikiIcons = '%SMARTEDITICONS%'; ?
-      * Use only '
       * default icons/strings be multiline. end with \
    * add all the colors of the WYSIWYG editor (use same html dialog?)
    * test on IE6 IE7 IE8 opera chrome safari...

@@ -68,12 +68,12 @@ wikismartSitePreferences = ""+"%SMARTEDITSTRINGSITE%";
 wikismartWebPreferences = ""+"%SMARTEDITSTRINGWEB%";
 wikismartCustomerPreferences = ""+"%SMARTEDITSTRINGUSER%";
 // 3 following lines to add if you have an old smartedit addon installation
-wikismartFoswikiSiteIcons = ''+'%SMARTEDITICONSITE%';
-wikismartFoswikiWebIcons = ''+'%SMARTEDITICONWEB%';
-wikismartFoswikiUserIcons = ''+'%SMARTEDITICONUSER%';
+wikismartFoswikiSiteIcons = ""+""%SMARTEDITICONSITE%";
+wikismartFoswikiWebIcons = ""+"%SMARTEDITICONWEB%";
+wikismartFoswikiUserIcons = ""+'%SMARTEDITICONUSER%";
 // End of copy
 wikismartCurrentWeb = "%WEB%";
-wikismartFoswikiIcons = '%SMARTEDITICONS%';
+wikismartFoswikiIcons = "%SMARTEDITICONS%";
 // To know the id of the textarea ... if it is not 'topic'
 wikismartEdit('topic');
 </script>
