@@ -1,7 +1,14 @@
-   * simplify syntax of icons/strings. On demand loading?
-   * add all the colors of the WYSIWYG editor
+TODO
+   * simplify syntax of icons/strings. 
+      * naming coherence USERS/USER
+      * what is wikismartFoswikiIcons = '%SMARTEDITICONS%'; ?
+      * Use only '
+      * default icons/strings be multiline. end with \
+   * add all the colors of the WYSIWYG editor (use same html dialog?)
    * test on IE6 IE7 IE8 opera chrome safari...
    * variable listing "good" browsers
    * variable to be disabled per user
+MAYBE?
+   * on demand loading of icons, strings?
    * enablable plugin?
    * compress js?
