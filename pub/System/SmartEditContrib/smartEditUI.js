@@ -1842,7 +1842,6 @@ function smartEditToggleSmileys(src){
 			}
 		}
 		else{ // Sinon, il faut la rajouter
-			//smartEditCreateSmileyDiv(src); 
 			smartEditCreateSmileyDivStringVersion(src);
 			if(smartExtendedStylesOpen){
 				smartEditToggleStyles();
@@ -1871,23 +1870,6 @@ function smartEditCloseSmileys(){
 	theDivToClose.parentNode.removeChild(theDivToClose);
 	SmartEditInsertSmileyOpen = false;
 	wikismartTextarea.focus();
-}
-
-function smartEditCreateSmileyDiv(source){
-	var theDivToShow = smartEditorGetDynamicDivision(source);// Create a context menu under the source position
-	theDivToShow.id = "SmartEditInsertSmiley";
-	theDivToShow.className = "SmartEditInsertSmiley"+smartEditorIECssClass;
-	theDivToShow.innerHTML = wikismartFoswikiIcons;
-	//document.body.appendChild(theDivToShow);
-	wikismartTextarea.parentNode.appendChild(theDivToShow);
-	var smartAllIcons = theDivToShow.getElementsByTagName("IMG");
-	if(smartAllIcons != null && smartAllIcons.length > 0){
-		for(var i=0;i<smartAllIcons.length;i++){
-			var tmpIcon = smartAllIcons[i];
-			smartEditApplyActionForIcon(tmpIcon);
-		}
-	}
-	SmartEditInsertSmileyOpen = true;
 }
 
 function smartEditApplyActionForIcon(theIcon){

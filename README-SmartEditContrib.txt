@@ -73,7 +73,6 @@ wikismartFoswikiWebIcons = ""+"%SMARTEDITICONWEB%";
 wikismartFoswikiUserIcons = ""+'%SMARTEDITICONUSER%";
 // End of copy
 wikismartCurrentWeb = "%WEB%";
-wikismartFoswikiIcons = "%SMARTEDITICONS%";
 // To know the id of the textarea ... if it is not 'topic'
 wikismartEdit('topic');
 </script>
