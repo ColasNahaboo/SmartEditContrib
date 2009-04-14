@@ -69,8 +69,8 @@ var is_firefox = ((clientPC.indexOf('gecko')!=-1) && (clientPC.indexOf('spoofer'
 
 function wikismartEdit(textareaid){
 	wikismartTextareaId = textareaid;
-	// If browser is Firefox or IE (Opera and Mac browsers are disabled)
-	if (is_firefox || ((navigator.userAgent.toLowerCase()).indexOf("opera") == -1)){
+	// Works only on If browser is Firefox or IE 8
+	if (is_firefox || ((navigator.userAgent).indexOf("MSIE 8.") != -1)){
 	// Special CSS style for Internet Explorer
 	if(!is_firefox && ((navigator.userAgent.toLowerCase()).indexOf("opera") == -1)){
 		smartEditorIECssClass = "IE";

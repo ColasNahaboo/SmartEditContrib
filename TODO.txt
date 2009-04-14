@@ -4,7 +4,9 @@ TODO
       * default icons/strings be multiline. end with \
    * add all the colors of the WYSIWYG editor (use same html dialog?)
    * test on IE6 IE7 IE8 opera chrome safari...
-   * variable listing "good" browsers
+   * variable listing "good" browsers: 
+      * MSIE 8.0
+      * Firefox
    * variable to be disabled per user
 MAYBE?
    * on demand loading of icons, strings?
