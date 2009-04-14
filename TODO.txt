@@ -1,6 +1,5 @@
 TODO
    * simplify syntax of icons/strings. name: value %SESEP%
-      * naming coherence USERS/USER
       * what is wikismartFoswikiIcons = '%SMARTEDITICONS%'; ?
       * Use only '
       * default icons/strings be multiline. end with \

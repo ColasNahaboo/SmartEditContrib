@@ -53,14 +53,14 @@ To add more than one element, you just have to copy from =&lt;tselement&gt;= to 
 *Basic insertion* : Smart Editor provides you some basic tags to insert that are =&lt;nop&gt;=, =&lt;br /&gt;= and =&lt;hr /&gt;=. But it is possible to configure personal strings to insert by editing a simple Foswiki macro.
 
 
-*Configuration* : via the Foswiki macros SMARTEDITSTRINGSITE,  SMARTEDITSTRINGWEB, SMARTEDITSTRINGUSERS that take a list of XML values of the STRING to insert and its LABEL like 
+*Configuration* : via the Foswiki macros SMARTEDITSTRINGSITE,  SMARTEDITSTRINGWEB, SMARTEDITSTRINGUSER that take a list of XML values of the STRING to insert and its LABEL like 
 <br> =&lt;tselement&gt;&lt;tsname&gt; LABEL &lt;/tsname&gt;&lt;tsstring&gt; STRING &lt;/tsstring&gt;&lt;/tselement&gt;=
 <br> e.g. =&lt;tselement&gt;&lt;tsname&gt; Today's Date&lt;/tsname&gt;&lt;tsstring&gt; %<nop>GMTIME{$year-$mo-$day}%&lt;/tsstring&gt;&lt;/tselement&gt;=
 
 Example :
 
 <verbatim>
-Set SMARTEDITSTRINGUSERS = <tselement><tsname>Your menu name </tsname><tsstring>you string to insert </tsstring></tselement>
+Set SMARTEDITSTRINGUSER = <tselement><tsname>Your menu name </tsname><tsstring>you string to insert </tsstring></tselement>
 </verbatim>
 
 To add more than one element, you just have to copy from =&lt;tselement&gt;= to =&lt;/tselement&gt;= and to complete each one.
@@ -107,7 +107,7 @@ From <nop>Web Preferences (<nop>Foswiki administrator), add or edit this variabl
 From user preferences, every one can add or edit this variable in his personnal page <nop>Main.FirstnameLastname: 
 
 <verbatim>
-	* Set SMARTEDITSTRINGUSERS =  <tselement><tsname>My email</tsname><tsstring>toto@toto.com</tsstring></tselement></tselement><tselement><tsname>your menu name</tsname><tsstring>your string</tsstring></tselement>...
+	* Set SMARTEDITSTRINGUSER =  <tselement><tsname>My email</tsname><tsstring>toto@toto.com</tsstring></tselement></tselement><tselement><tsname>your menu name</tsname><tsstring>your string</tsstring></tselement>...
 </verbatim>
 
 The icon menu is set by the Foswiki administrators.
