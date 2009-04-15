@@ -61,18 +61,26 @@ var smartEditDoNotInit = false;
 
 var smartEditFirstExternalLink = true;
 
-var clientPC = navigator.userAgent.toLowerCase(); // Get client info
-var is_opera = (navigator.userAgent.toLowerCase().indexOf("opera") != -1);
-var is_firefox = ((clientPC.indexOf('gecko')!=-1) && (clientPC.indexOf('spoofer')==-1)
-                && (clientPC.indexOf('khtml') == -1) && (clientPC.indexOf('netscape/7.0')==-1));
+var reVarUnset = /^($|off|0|%)/i;
+var reIsIE = /MSIE/;
+var reIsIE8 = /MSIE [123489][.]/;
+var reFFinclude = /gecko/i;
+var reFFexclude = /(spoofer|khtml|netscape\/7[.]0)/i;
+var reOpera = /opera/i;
 
+var is_opera = reOpera.exec(navigator.userAgent);
+var is_firefox = reFFinclude(navigator.userAgent) && !reFFexclude(navigator.userAgent);
 
 function wikismartEdit(textareaid){
 	wikismartTextareaId = textareaid;
 	// Works only on If browser is Firefox or IE 8
-	if (is_firefox || ((navigator.userAgent).indexOf("MSIE 8.") != -1)){
+	if (!is_firefox 
+	    && !reIsIE8.exec(navigator.userAgent)
+	    && reVarUnset.exec(wikismartForce)) { 
+	      return -1; 
+	    }
 	// Special CSS style for Internet Explorer
-	if(!is_firefox && ((navigator.userAgent.toLowerCase()).indexOf("opera") == -1)){
+	if(reIsIE.exec(navigator.userAgent)) {
 		smartEditorIECssClass = "IE";
 	}
 
@@ -112,7 +120,6 @@ function wikismartEdit(textareaid){
 		// Insert the botton toolbar
 		var newToolBottom = smartEditCreateToolbar();
 		wikismartInsertAfter(wikismartTextarea.parentNode, newToolBottom, wikismartTextarea);
-	}
 	}
 }
 
