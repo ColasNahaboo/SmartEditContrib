@@ -69,7 +69,7 @@ var reFFexclude = /(spoofer|khtml|netscape\/7[.]0)/i;
 var reOpera = /opera/i;
 
 var is_opera = reOpera.exec(navigator.userAgent);
-var is_firefox = reFFinclude(navigator.userAgent) && !reFFexclude(navigator.userAgent);
+var is_firefox = reFFinclude.exec(navigator.userAgent) && !reFFexclude.exec(navigator.userAgent);
 
 function wikismartEdit(textareaid){
 	wikismartTextareaId = textareaid;
