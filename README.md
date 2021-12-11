@@ -1,5 +1,5 @@
 # [Legacy] SmartEditContrib
-Foswiki: this details the steps I used to port SmartEditContrib to Foswiki, See http://foswiki.org/Tasks/Item8111
+Foswiki: this details the steps I used to port SmartEditContrib to Foswiki in 2009, See http://foswiki.org/Tasks/Item8111
 
 This is legacy code, uploaded here for reference, but not maintained, and probably not working anymore.
 
